@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Imam & Mosque Admin Dashboard — MosqAI</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo-area">
+        <div class="logo-icon">🕌</div>
+        <div class="logo-title">
+          <h1 id="mosque-title">Masjid Al-Noor — Khutbah Console</h1>
+          <p>Live Arabic Translation & Earbud Audio Hub</p>
+        </div>
+      </div>
+      <div style="display: flex; gap: 0.75rem; align-items: center;">
+        <span class="badge badge-idle" id="session-badge">
+          <span class="pulse-dot"></span> <span id="session-status-text">IDLE</span>
+        </span>
+        <a href="/display.html" target="_blank" class="btn btn-secondary" style="font-size: 0.85rem;">Open TV Screen ↗</a>
+        <button id="btn-logout" class="btn btn-secondary" style="font-size: 0.82rem; padding: 0.35rem 0.65rem;" title="Lock Imam Console">
+          🔒 Lock
+        </button>
+      </div>
+    </header>
+
+    <!-- Imam & Mosque Admin Authentication Overlay Modal -->
+    <div id="auth-modal" style="display: none; position: fixed; inset: 0; background: rgba(2, 6, 23, 0.95); backdrop-filter: blur(10px); z-index: 9999; align-items: center; justify-content: center; padding: 1.5rem;">
+      <div style="background: var(--bg-card); border: 1px solid var(--accent-gold); border-radius: 16px; padding: 2.25rem; max-width: 420px; width: 100%; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.7); text-align: center;">
+        <div style="font-size: 3rem; margin-bottom: 0.5rem;">🕌</div>
+        <h2 style="font-size: 1.45rem; font-weight: 700; color: #f8fafc; margin-bottom: 0.35rem;">Imam & Admin Access</h2>
+        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
+          Pulpit controls and live broadcasting are restricted to mosque officials.
+        </p>
+
+        <form id="auth-form" onsubmit="return false;" style="text-align: left;">
+          <label for="admin-pin-input" style="font-size: 0.82rem; color: var(--text-secondary); display: block; margin-bottom: 0.4rem;">
+            Enter Imam Passcode / PIN:
+          </label>
+          <input type="password" id="admin-pin-input" class="form-select" placeholder="Default PIN: mosq2026" autofocus style="font-size: 1.15rem; letter-spacing: 0.15em; text-align: center; margin-bottom: 0.75rem;" />
+          
+          <div id="auth-error-msg" style="display: none; color: #f87171; font-size: 0.82rem; margin-bottom: 0.75rem; text-align: center; background: rgba(239, 68, 68, 0.1); padding: 0.45rem; border-radius: 6px;"></div>
+
+          <button type="button" id="btn-submit-auth" class="btn btn-primary" style="width: 100%; font-size: 0.95rem; padding: 0.65rem; margin-bottom: 0.75rem;">
+            🔓 Unlock Console
+          </button>
+
+          <p style="font-size: 0.78rem; color: var(--text-muted); text-align: center; margin-top: 1rem; margin-bottom: 0;">
+            Worshippers / attendees do not need login.<br>(Mobile view at <a href="/join.html" target="_blank" style="color: var(--accent-emerald); text-decoration: underline;">join.html</a>)
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <!-- Main Grid -->
+    <div class="grid-layout">
+      
+      <!-- Left Column: Controls & Live Monitor -->
+      <div>
+        
+        <!-- Live Action Controls -->
+        <div class="card">
+          <div class="card-title">
+            <span>🎙️ Session & Audio Controls</span>
+            <span id="live-timer" style="font-size: 0.9rem; color: var(--text-secondary); font-family: monospace;">00:00:00</span>
+          </div>
+
+          <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1.25rem;">
+            <button id="btn-start" class="btn btn-primary">▶ Start Khutbah</button>
+            <button id="btn-pause" class="btn btn-secondary" disabled>⏸ Pause</button>
+            <button id="btn-end" class="btn btn-danger" disabled>⏹ End Khutbah</button>
+            <button id="btn-simulate" class="btn btn-accent">⚡ Simulate Live Khutbah Demo</button>
+          </div>
+
+          <!-- Microphone Streaming Section -->
+          <div style="background: rgba(15, 23, 42, 0.6); padding: 0.85rem; border-radius: 8px; border: 1px solid var(--bg-card-border);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <span style="font-size: 0.9rem; font-weight: 600;">Hardware Mic Input</span>
+              <button id="btn-toggle-mic" class="btn btn-secondary" style="padding: 0.35rem 0.75rem; font-size: 0.8rem;">
+                🎤 Enable Live Mic
+              </button>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <span style="font-size: 0.8rem; color: var(--text-secondary);">Audio Level:</span>
+              <div style="flex: 1; height: 8px; background: #334155; border-radius: 4px; overflow: hidden;">
+                <div id="mic-level-bar" style="width: 0%; height: 100%; background: #10b981; transition: width 0.1s;"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Manual Speech / Ayah Injection for instant manual test -->
+          <div style="margin-top: 1rem; display: flex; gap: 0.5rem;">
+            <input type="text" id="manual-input" class="form-select" placeholder="Type or paste Arabic text / Ayah to test..." dir="rtl" style="font-family: var(--font-arabic); font-size: 1.1rem;" />
+            <button id="btn-inject" class="btn btn-secondary" style="white-space: nowrap;">Send ↵</button>
+          </div>
+        </div>
+
+        <!-- Custom Khutbah Input & Live Streamer -->
+        <div class="card" style="border: 1px solid rgba(16, 185, 129, 0.35); background: rgba(6, 78, 59, 0.12);">
+          <div class="card-title">
+            <span style="display: flex; align-items: center; gap: 0.5rem;">
+              <span>📖 Deliver Custom Khutbah</span>
+              <span class="badge" style="background: rgba(16, 185, 129, 0.2); color: #34d399; font-size: 0.72rem;">Live Attendee Simulator</span>
+            </span>
+            <span id="custom-khutbah-status" style="font-size: 0.8rem; color: var(--text-secondary);">Ready to deliver</span>
+          </div>
+
+          <p style="font-size: 0.84rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+            Paste any custom Arabic Khutbah or choose a pre-loaded sermon. MosqAI will deliver it sentence-by-sentence at a natural Imam's pacing so you can put in your earbuds and experience live translations and Quran cards just like real attendees.
+          </p>
+
+          <!-- Pre-loaded Quick Khutbah Templates -->
+          <div style="display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.75rem;">
+            <button type="button" class="btn btn-secondary" id="btn-tpl-taqwa" style="font-size: 0.76rem; padding: 0.3rem 0.6rem;">
+              🌟 1. Taqwa & Ali 'Imran (3:102)
+            </button>
+            <button type="button" class="btn btn-secondary" id="btn-tpl-ease" style="font-size: 0.76rem; padding: 0.3rem 0.6rem;">
+              🌟 2. Ash-Sharh (94:5) & Relief
+            </button>
+            <button type="button" class="btn btn-secondary" id="btn-tpl-character" style="font-size: 0.76rem; padding: 0.3rem 0.6rem;">
+              🌟 3. Brotherhood & Character
+            </button>
+          </div>
+
+          <!-- Khutbah Input Textarea -->
+          <div style="margin-bottom: 0.75rem;">
+            <textarea id="custom-khutbah-text" rows="4" class="form-select" dir="rtl" style="font-family: var(--font-arabic); font-size: 1.05rem; line-height: 1.8; resize: vertical;" placeholder="Paste your Arabic Khutbah here (sentences, paragraphs, or Quran verses)..."></textarea>
+          </div>
+
+          <!-- Controls & Pacing -->
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 0.75rem;">
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <label for="khutbah-pacing" style="font-size: 0.8rem; color: var(--text-secondary); white-space: nowrap;">Imam Pacing:</label>
+              <select id="khutbah-pacing" class="form-select" style="padding: 0.3rem 0.6rem; font-size: 0.82rem; width: auto;">
+                <option value="3000">Fast (3 seconds / phrase)</option>
+                <option value="5000" selected>Natural Imam Pacing (5 seconds - Recommended)</option>
+                <option value="8000">Slow & Deliberate (8 seconds)</option>
+                <option value="manual">Manual (Click 'Next Sentence')</option>
+              </select>
+            </div>
+
+            <div style="display: flex; gap: 0.5rem;">
+              <button id="btn-deliver-khutbah" class="btn btn-primary" style="padding: 0.4rem 1rem;">
+                ▶ Deliver Khutbah
+              </button>
+              <button id="btn-next-phrase" class="btn btn-secondary" style="padding: 0.4rem 0.75rem; display: none;">
+                ⏭ Next Sentence
+              </button>
+              <button id="btn-stop-khutbah" class="btn btn-danger" style="padding: 0.4rem 0.75rem; display: none;">
+                ⏹ Stop
+              </button>
+            </div>
+          </div>
+
+          <!-- Live Teleprompter Sentence Viewer -->
+          <div id="teleprompter-box" style="display: none; background: rgba(15, 23, 42, 0.75); border: 1px solid var(--bg-card-border); border-radius: 8px; padding: 0.75rem; margin-bottom: 0.5rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+              <span style="font-size: 0.78rem; color: var(--accent-gold); font-weight: 600;">🎙️ Currently Speaking by Imam:</span>
+              <span id="teleprompter-progress" style="font-size: 0.75rem; color: var(--text-muted); font-family: monospace;">Phrase 1 of 5</span>
+            </div>
+            <div id="teleprompter-current" style="font-family: var(--font-arabic); font-size: 1.25rem; color: #ecfdf5; direction: rtl; min-height: 2rem;"></div>
+          </div>
+
+          <!-- Audio File Upload Option for Real Voice Test -->
+          <div style="border-top: 1px dashed var(--bg-card-border); margin-top: 0.75rem; padding-top: 0.75rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+              <span style="font-size: 0.82rem; color: var(--text-secondary);">
+                🎵 Have an audio file (MP3/WAV) of an Imam?
+              </span>
+              <label class="btn btn-secondary" style="padding: 0.3rem 0.7rem; font-size: 0.78rem; cursor: pointer; margin-bottom: 0;">
+                📁 Play Audio File
+                <input type="file" id="khutbah-audio-file" accept="audio/*" style="display: none;" />
+              </label>
+            </div>
+            <div id="audio-file-status" style="display: none; margin-top: 0.5rem; font-size: 0.8rem; color: #34d399;"></div>
+            <audio id="audio-file-player" controls style="display: none; width: 100%; margin-top: 0.5rem;"></audio>
+          </div>
+        </div>
+
+        <!-- Live Transcription & Translation Feed -->
+        <div class="card">
+          <div class="card-title">
+            <span>📜 Live Stream Transcript & Quran Detections</span>
+            <span style="font-size: 0.8rem; color: var(--text-secondary);" id="transcript-count">0 phrases</span>
+          </div>
+
+          <div class="stream-container" id="transcript-stream">
+            <div style="text-align: center; color: var(--text-muted); padding: 3rem 1rem;">
+              Khutbah has not started yet. Click <strong>"Start Khutbah"</strong> or <strong>"Simulate Live Khutbah Demo"</strong> to begin.
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Column: Attendees, QR Code & Mosque Settings -->
+      <div>
+        
+        <!-- Live Attendees Card -->
+        <div class="card">
+          <div class="card-title">
+            <span>👥 Live Attendees & Earbuds</span>
+            <span class="badge badge-live" id="total-listeners-badge">0 Listeners</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem; font-size: 0.9rem;">
+            <span style="color: var(--text-secondary);">Connected Phones:</span>
+            <strong id="attendee-count">0</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem; font-size: 0.9rem;">
+            <span style="color: var(--text-secondary);">TV Displays Active:</span>
+            <strong id="tv-count">0</strong>
+          </div>
+          <div style="border-top: 1px solid var(--bg-card-border); padding-top: 0.75rem;">
+            <span style="font-size: 0.85rem; color: var(--text-secondary); display: block; margin-bottom: 0.4rem;">Languages in use:</span>
+            <div id="languages-breakdown" style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
+              <span style="font-size: 0.8rem; color: var(--text-muted);">None active yet</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Attendee QR Code -->
+        <div class="card" style="text-align: center;">
+          <div class="card-title" style="justify-content: center;">
+            <span>📱 Attendee Scan & Listen</span>
+          </div>
+          <p style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+            Display this QR code at mosque entrances or TV screens.
+          </p>
+          <div style="background: white; padding: 0.75rem; border-radius: 8px; display: inline-block; margin-bottom: 0.75rem;">
+            <img id="qr-code-img" src="" alt="Attendee QR Code" style="width: 180px; height: 180px; display: block;" />
+          </div>
+          <div>
+            <a id="join-link-href" href="/join.html" target="_blank" class="btn btn-secondary" style="font-size: 0.8rem; width: 100%;">
+              Open Attendee Page ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- Mosque Settings -->
+        <div class="card">
+          <div class="card-title">
+            <span>⚙️ Mosque Branding</span>
+          </div>
+          <div style="margin-bottom: 0.75rem;">
+            <label style="font-size: 0.8rem; color: var(--text-secondary); display: block; margin-bottom: 0.25rem;">Mosque Name</label>
+            <input type="text" id="setting-mosque-name" class="form-select" value="Masjid Al-Noor" />
+          </div>
+          <div>
+            <label style="font-size: 0.8rem; color: var(--text-secondary); display: block; margin-bottom: 0.25rem;">Primary TV Display Language</label>
+            <select id="setting-primary-lang" class="form-select">
+              <option value="en" selected>English</option>
+              <option value="bn">Bengali (বাংলা)</option>
+              <option value="ur">Urdu (اردو)</option>
+              <option value="fr">French (Français)</option>
+              <option value="zh">Chinese (中文)</option>
+              <option value="tr">Turkish (Türkçe)</option>
+            </select>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

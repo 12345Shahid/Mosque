@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Live Khutbah Audio & Translation — MosqAI</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body style="background-color: #0b1120;">
+  <div class="mobile-wrap">
+    
+    <!-- Sticky Mobile Header -->
+    <header class="mobile-header">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <span style="font-size: 1.4rem;">🕌</span>
+          <div>
+            <h1 style="font-size: 1.05rem; font-weight: 700; line-height: 1.2;" id="mobile-mosque-name">Masjid Al-Noor</h1>
+            <div style="display: flex; gap: 0.4rem; align-items: center;">
+              <span style="font-size: 0.75rem; color: var(--text-secondary);">Live Translation & Voice</span>
+              <span style="font-size: 0.7rem; color: #34d399; font-weight: 600;">• No Sign-up Required</span>
+            </div>
+          </div>
+        </div>
+        <span class="badge badge-live" id="mobile-status-badge">
+          <span class="pulse-dot"></span> LIVE
+        </span>
+      </div>
+
+      <!-- Language Selector -->
+      <div style="display: flex; gap: 0.5rem; align-items: center;">
+        <label for="lang-select" style="font-size: 0.8rem; color: var(--text-secondary); white-space: nowrap;">Language:</label>
+        <select id="lang-select" class="form-select" style="padding: 0.45rem 0.65rem; font-size: 0.85rem;">
+          <option value="en" selected>English</option>
+          <option value="bn">Bengali (বাংলা)</option>
+          <option value="ur">Urdu (اردو)</option>
+          <option value="fr">French (Français)</option>
+          <option value="zh">Chinese (中文)</option>
+          <option value="tr">Turkish (Türkçe)</option>
+        </select>
+      </div>
+    </header>
+
+    <!-- Earbuds Audio Player Banner -->
+    <div style="padding: 0.85rem 1rem 0;">
+      <div class="audio-player-banner">
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+          <span class="earbud-icon" id="audio-icon">🎧</span>
+          <div>
+            <div style="font-weight: 600; font-size: 0.95rem;" id="audio-status-title">Earbud Audio: Off</div>
+            <div style="font-size: 0.75rem; color: #a7f3d0;" id="audio-status-desc">Tap button to start listening live</div>
+          </div>
+        </div>
+        <button id="btn-toggle-audio" class="btn btn-accent" style="padding: 0.45rem 0.9rem; font-size: 0.85rem; border-radius: 8px;">
+          ▶ Listen Live
+        </button>
+      </div>
+    </div>
+
+    <!-- Live Transcript & Ayah Stream -->
+    <main style="flex: 1; padding: 0.5rem 1rem 2rem; overflow-y: auto;" id="mobile-feed">
+      
+      <!-- Waiting Notice -->
+      <div id="mobile-waiting" style="text-align: center; padding: 4rem 1rem; color: var(--text-muted);">
+        <div style="font-size: 2.5rem; margin-bottom: 0.75rem;">⏳</div>
+        <p style="font-size: 1rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 0.25rem;">
+          Connected to Live Khutbah
+        </p>
+        <p style="font-size: 0.82rem;">
+          Translations and spoken audio will stream here automatically as the Imam speaks.
+        </p>
+      </div>
+
+    </main>
+
+    <!-- Mobile Footer Info -->
+    <footer style="padding: 0.75rem 1rem; text-align: center; font-size: 0.75rem; color: var(--text-muted); border-top: 1px solid var(--bg-card-border); background: #0f172a;">
+      MosqAI • Put on your earbuds to listen in your own language
+    </footer>
+
+  </div>
+
+  <script src="join.js"></script>
+</body>
+</html>

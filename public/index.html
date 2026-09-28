@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MosqAI — Live Khutbah Translation & Audio System</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container" style="max-width: 900px; padding-top: 3rem;">
+    <header class="header" style="justify-content: center; flex-direction: column; text-align: center; gap: 0.5rem;">
+      <div class="logo-area" style="justify-content: center;">
+        <div class="logo-icon">🕌</div>
+        <div class="logo-title">
+          <h1 style="font-size: 2rem;">MosqAI</h1>
+          <p>Real-Time Khutbah Translation & Earbuds Audio System</p>
+        </div>
+      </div>
+      <div style="margin-top: 0.75rem;">
+        <span class="badge badge-live" id="system-badge">
+          <span class="pulse-dot"></span> System Operational
+        </span>
+      </div>
+    </header>
+
+    <div style="text-align: center; margin-bottom: 2.5rem;">
+      <p style="color: var(--text-secondary); font-size: 1.15rem; max-width: 650px; margin: 0 auto;">
+        An AI-powered live sermon platform. Converts spoken Arabic into real-time multi-language text and earbud audio for mosque attendees, with automated Quranic verse recognition.
+      </p>
+    </div>
+
+    <!-- Quick Navigation Launch Grid -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+      
+      <!-- Imam / Admin Dashboard -->
+      <div class="card" style="display: flex; flex-direction: column; justify-content: space-between; border-top: 4px solid var(--primary-light);">
+        <div>
+          <div style="font-size: 2rem; margin-bottom: 0.5rem;">🎙️</div>
+          <h2 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Imam & Admin Panel</h2>
+          <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;">
+            Control the live khutbah, manage microphone audio, trigger realistic demos, and view live listener stats.
+          </p>
+        </div>
+        <a href="/admin.html" class="btn btn-primary" id="btn-admin-portal">Open Admin Panel →</a>
+      </div>
+
+      <!-- Live TV / Projector Display -->
+      <div class="card" style="display: flex; flex-direction: column; justify-content: space-between; border-top: 4px solid var(--accent-gold);">
+        <div>
+          <div style="font-size: 2rem; margin-bottom: 0.5rem;">📺</div>
+          <h2 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Live TV / Projector</h2>
+          <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;">
+            Clean, large-format dual Arabic + translation screen for the mosque hall with animated Quran Ayah cards.
+          </p>
+        </div>
+        <a href="/display.html" class="btn btn-accent" id="btn-tv-portal" target="_blank">Open TV Screen ↗</a>
+      </div>
+
+      <!-- Attendee Mobile View (QR code scan target) -->
+      <div class="card" style="display: flex; flex-direction: column; justify-content: space-between; border-top: 4px solid #3b82f6; position: relative;">
+        <span style="position: absolute; top: -10px; right: 15px; background: #2563eb; color: white; font-size: 0.72rem; font-weight: 700; padding: 2px 8px; border-radius: 999px;">
+          NO SIGN-UP NEEDED
+        </span>
+        <div>
+          <div style="font-size: 2rem; margin-bottom: 0.5rem;">📱</div>
+          <h2 style="font-size: 1.25rem; margin-bottom: 0.25rem;">Attendee Phone (QR)</h2>
+          <p style="color: #60a5fa; font-size: 0.8rem; font-weight: 600; margin-bottom: 0.5rem;">
+            Instant 1-Tap • Zero app install • Zero login
+          </p>
+          <p style="color: var(--text-secondary); font-size: 0.88rem; margin-bottom: 1rem;">
+            For worshippers in the mosque. Simply scan the QR code to read live translations or listen through earbuds in your own language.
+          </p>
+        </div>
+        <a href="/join.html" class="btn btn-secondary" id="btn-attendee-portal" target="_blank">Open Mobile View (No Login) ↗</a>
+      </div>
+
+      <!-- Past Khutbah Archives -->
+      <div class="card" style="display: flex; flex-direction: column; justify-content: space-between; border-top: 4px solid #8b5cf6;">
+        <div>
+          <div style="font-size: 2rem; margin-bottom: 0.5rem;">📜</div>
+          <h2 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Khutbah History</h2>
+          <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;">
+            Review past khutbah sessions, transcripts, translations, and listener attendance analytics.
+          </p>
+        </div>
+        <a href="/history.html" class="btn btn-secondary" id="btn-history-portal">View Archives →</a>
+      </div>
+
+    </div>
+
+    <!-- Active Pipeline Summary -->
+    <div class="card">
+      <h3 style="font-size: 1.05rem; margin-bottom: 0.75rem;">⚡ Configured AI Providers & Status</h3>
+      <div id="providers-info" style="display: flex; gap: 1.5rem; flex-wrap: wrap; font-size: 0.9rem; color: var(--text-secondary);">
+        <div>Speech-to-Text: <strong style="color: white;" id="stt-status">Checking...</strong></div>
+        <div>Quran Matcher: <strong style="color: #34d399;">Active (6,236 Ayahs indexed)</strong></div>
+        <div>Translation: <strong style="color: white;" id="trans-status">Checking...</strong></div>
+        <div>TTS Voice: <strong style="color: white;" id="tts-status">Checking...</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    fetch('/api/status')
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('stt-status').textContent = data.providers.gladiaSTT ? 'Gladia AI (Live)' : 'Khutbah Simulator / Web Mic (Ready)';
+        document.getElementById('trans-status').textContent = data.providers.groqTranslation ? 'Groq Llama 3.3 70B (Live)' : 'Multi-Language Engine (Ready)';
+        document.getElementById('tts-status').textContent = data.providers.cartesiaTTS ? 'Cartesia Sonic (Live)' : 'Low-Latency Streamer (Ready)';
+      })
+      .catch(err => console.warn('Could not fetch status:', err));
+  </script>
+</body>
+</html>

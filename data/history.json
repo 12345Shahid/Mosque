@@ -1,0 +1,1033 @@
+[
+  {
+    "id": "live-readiness-test",
+    "mosqueName": "Test Masjid",
+    "startedAt": "2026-09-28T18:21:10.621Z",
+    "endedAt": "2026-09-28T18:21:10.970Z",
+    "durationSeconds": 0,
+    "totalTranscripts": 6,
+    "totalAyahsDetected": 2,
+    "peakListeners": 1,
+    "transcripts": [
+      {
+        "arabic": "إن الحمد لله نحمده ونستعينه ونستغفره",
+        "translations": {
+          "en": "All praise is due to Allah; we praise Him, seek His help, and ask for His forgiveness.",
+          "bn": "নিশ্চয় সমস্ত প্রশংসা আল্লাহর জন্য, আমরা তাঁরই প্রশংসা করি, তাঁরই কাছে সাহায্য চাই এবং তাঁরই কাছে ক্ষমা প্রার্থনা করি।",
+          "ur": "تمام تعریفیں اللہ کے لیے ہیں، ہم اسی کی تعریف کرتے ہیں، اسی سے مدد مانگتے ہیں اور اسی سے بخشش چاہتے ہیں۔",
+          "fr": "Toutes les louanges sont à Allah, nous Le louons, nous implorons Son secours et nous Lui demandons pardon.",
+          "zh": "一切赞颂，全归真主，我们赞美他，求他相助，求他宽恕。",
+          "tr": "Hamd yalnızca Allah'adır; O'na hamdeder, O'ndan yardım diler ve O'ndan bağışlanma dileriz."
+        },
+        "ayah": null,
+        "timestamp": "2026-09-28T18:21:10.733Z"
+      },
+      {
+        "arabic": "ونعوذ بالله من شرور أنفسنا ومن سيئات أعمالنا",
+        "translations": {
+          "en": "And we seek refuge in Allah from the evils of ourselves and from our bad deeds.",
+          "bn": "এবং আমরা আমাদের আত্মার মন্দ থেকে এবং আমাদের খারাপ আমল থেকে আল্লাহর আশ্রয় চাই।",
+          "ur": "اور ہم اپنے نفس کے شر اور اپنے برے اعمال سے اللہ کی پناہ مانگتے ہیں۔",
+          "fr": "Et nous cherchons refuge auprès d'Allah contre la méchanceté de nos âmes et les mauvais penchants de nos actions.",
+          "zh": "我们求真主庇佑，免遭自身之恶和恶行的伤害。",
+          "tr": "Nefislerimizin şerlerinden ve amellerimizin kötülüklerinden Allah'a sığınırız."
+        },
+        "ayah": null,
+        "timestamp": "2026-09-28T18:21:10.738Z"
+      },
+      {
+        "arabic": "يا أيها الذين آمنوا اتقوا الله حق تقاته ولا تموتن إلا وأنتم مسلمون",
+        "translations": {
+          "en": "O you who have believed, fear Allah as He should be feared and do not die except as Muslims [in submission to Him].",
+          "bn": "হে মুমিনগণ! তোমরা আল্লাহকে ভয় কর যেভাবে ভয় করা উচিত, এবং আত্মসমর্পণকারী (মুসলিম) না হয়ে কিছুতেই মৃত্যুবরণ করো না।",
+          "ur": "اے ایمان والو! اللہ سے ڈرو جیسا کہ اس سے ڈرنے کا حق ہے، اور تمہیں موت نہ آئے مگر اس حال میں کہ تم مسلم ہو۔",
+          "fr": "Ô les croyants! Craignez Allah comme Il doit être craint. Et ne mourez qu'en pleine soumission.",
+          "zh": "信道的人们啊！你们当真实地敬畏真主，你们除非顺服，切不可死。",
+          "tr": "Ey iman edenler! Allah'a karşı gelmekten nasıl sakınmak gerekiyorsa öylece sakının ve ancak müslümanlar olarak can verin."
+        },
+        "ayah": {
+          "isAyah": true,
+          "confidence": 99,
+          "surahNumber": 3,
+          "surahNameArabic": "آل عمران",
+          "surahNameEnglish": "Ali 'Imran",
+          "ayahNumber": 102,
+          "reference": "Ali 'Imran 3:102",
+          "arabicUthmani": "يَا أَيُّهَا الَّذِينَ آمَنُوا اتَّقُوا اللَّهَ حَقَّ تُقَاتِهِ وَلَا تَمُوتُنَّ إِلَّا وَأَنتُم مُّسْلِمُونَ",
+          "translations": {
+            "en": "O you who have believed, fear Allah as He should be feared and do not die except as Muslims [in submission to Him].",
+            "bn": "হে মুমিনগণ! তোমরা আল্লাহকে ভয় কর যেভাবে ভয় করা উচিত, এবং আত্মসমর্পণকারী (মুসলিম) না হয়ে কিছুতেই মৃত্যুবরণ করো না।",
+            "ur": "اے ایمان والو! اللہ سے ڈرو جیسا کہ اس سے ڈرنے کا حق ہے، اور تمہیں موت نہ آئے مگر اس حال میں کہ تم مسلم ہو۔",
+            "fr": "Ô les croyants! Craignez Allah comme Il doit être craint. Et ne mourez qu'en pleine soumission.",
+            "zh": "信道的人们啊！你们当真实地敬畏真主，你们除非顺服，切不可死。",
+            "tr": "Ey iman edenler! Allah'a karşı gelmekten nasıl sakınmak gerekiyorsa öylece sakının ve ancak müslümanlar olarak can verin."
+          }
+        },
+        "timestamp": "2026-09-28T18:21:10.742Z"
+      },
+      {
+        "arabic": "فإن مع العسر يسرا",
+        "translations": {
+          "en": "For indeed, with hardship [will be] ease.",
+          "bn": "নিশ্চয় কষ্টের সাথেই স্বস্তি আছে।",
+          "ur": "بے شک مشکل کے ساتھ آسانی ہے۔",
+          "fr": "Après la difficulté vient certes la facilité!",
+          "zh": "与艰难相伴的，确是容易。",
+          "tr": "Şüphesiz güçlükle beraber bir kolaylık vardır."
+        },
+        "ayah": {
+          "isAyah": true,
+          "confidence": 99,
+          "surahNumber": 94,
+          "surahNameArabic": "الشرح",
+          "surahNameEnglish": "Ash-Sharh",
+          "ayahNumber": 5,
+          "reference": "Ash-Sharh 94:5",
+          "arabicUthmani": "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا",
+          "translations": {
+            "en": "For indeed, with hardship [will be] ease.",
+            "bn": "নিশ্চয় কষ্টের সাথেই স্বস্তি আছে।",
+            "ur": "بے شک مشکل کے ساتھ آسانی ہے۔",
+            "fr": "Après la difficulté vient certes la facilité!",
+            "zh": "与艰难相伴的，确是容易。",
+            "tr": "Şüphesiz güçlükle beraber bir kolaylık vardır."
+          }
+        },
+        "timestamp": "2026-09-28T18:21:10.745Z"
+      },
+      {
+        "arabic": "أيها الإخوة الكرام، اتقوا الله تعالى واعلموا أن الحياة الدنيا دار امتحان",
+        "translations": {
+          "en": "Respected brothers, fear Allah the Almighty, and know that this worldly life is a realm of trial.",
+          "bn": "হে সম্মানিত ভাইয়েরা, সর্বশক্তিমান আল্লাহকে ভয় করুন এবং জেনে রাখুন যে এই পার্থিব জীবন একটি পরীক্ষার স্থান।",
+          "ur": "معزز بھائیو! اللہ تعالیٰ کا تقویٰ اختیار کرو اور جان لو کہ یہ دنیا امتحان کا گھر ہے۔",
+          "fr": "Chers frères, craignez Allah le Très-Haut et sachez que la vie d'ici-bas est une épreuve.",
+          "zh": "尊贵的兄弟们，应当敬畏至尊的真主，并当知道今世是考验的场所。",
+          "tr": "Ey aziz kardeşler! Yüce Allah'tan sakının ve bilin ki bu dünya hayatı bir imtihan yurdudur."
+        },
+        "ayah": null,
+        "timestamp": "2026-09-28T18:21:10.749Z"
+      },
+      {
+        "arabic": "إن الحمد لله نحمده ونستعينه ونستغفره",
+        "translations": {
+          "en": "All praise is due to Allah; we praise Him, seek His help, and ask for His forgiveness.",
+          "bn": "নিশ্চয় সমস্ত প্রশংসা আল্লাহর জন্য, আমরা তাঁরই প্রশংসা করি, তাঁরই কাছে সাহায্য চাই এবং তাঁরই কাছে ক্ষমা প্রার্থনা করি।",
+          "ur": "تمام تعریفیں اللہ کے لیے ہیں، ہم اسی کی تعریف کرتے ہیں، اسی سے مدد مانگتے ہیں اور اسی سے بخشش چاہتے ہیں۔",
+          "fr": "Toutes les louanges sont à Allah, nous Le louons, nous implorons Son secours et nous Lui demandons pardon.",
+          "zh": "一切赞颂，全归真主，我们赞美他，求他相助，求他宽恕。",
+          "tr": "Hamd yalnızca Allah'adır; O'na hamdeder, O'ndan yardım diler ve O'ndan bağışlanma dileriz."
+        },
+        "ayah": null,
+        "timestamp": "2026-09-28T18:21:10.958Z"
+      }
+    ],
+    "detectedAyahs": [
+      {
+        "reference": "Ali 'Imran 3:102",
+        "arabicUthmani": "يَا أَيُّهَا الَّذِينَ آمَنُوا اتَّقُوا اللَّهَ حَقَّ تُقَاتِهِ وَلَا تَمُوتُنَّ إِلَّا وَأَنتُم مُّسْلِمُونَ",
+        "timestamp": "2026-09-28T18:21:10.742Z"
+      },
+      {
+        "reference": "Ash-Sharh 94:5",
+        "arabicUthmani": "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا",
+        "timestamp": "2026-09-28T18:21:10.745Z"
+      }
+    ]
+  },
+  {
+    "id": "live-readiness-test",
+    "mosqueName": "Test Masjid",
+    "startedAt": "2026-09-28T18:20:36.258Z",
+    "endedAt": "2026-09-28T18:20:36.610Z",
+    "durationSeconds": 0,
+    "totalTranscripts": 6,
+    "totalAyahsDetected": 2,
+    "peakListeners": 1,
+    "transcripts": [
+      {
+        "arabic": "إن الحمد لله نحمده ونستعينه ونستغفره",
+        "translations": {
+          "en": "All praise is due to Allah; we praise Him, seek His help, and ask for His forgiveness.",
+          "bn": "নিশ্চয় সমস্ত প্রশংসা আল্লাহর জন্য, আমরা তাঁরই প্রশংসা করি, তাঁরই কাছে সাহায্য চাই এবং তাঁরই কাছে ক্ষমা প্রার্থনা করি।",
+          "ur": "تمام تعریفیں اللہ کے لیے ہیں، ہم اسی کی تعریف کرتے ہیں، اسی سے مدد مانگتے ہیں اور اسی سے بخشش چاہتے ہیں۔",
+          "fr": "Toutes les louanges sont à Allah, nous Le louons, nous implorons Son secours et nous Lui demandons pardon.",
+          "zh": "一切赞颂，全归真主，我们赞美他，求他相助，求他宽恕。",
+          "tr": "Hamd yalnızca Allah'adır; O'na hamdeder, O'ndan yardım diler ve O'ndan bağışlanma dileriz."
+        },
+        "ayah": null,
+        "timestamp": "2026-09-28T18:20:36.370Z"
+      },
+      {
+        "arabic": "ونعوذ بالله من شرور أنفسنا ومن سيئات أعمالنا",
+        "translations": {
+          "en": "And we seek refuge in Allah from the evils of ourselves and from our bad deeds.",
+          "bn": "এবং আমরা আমাদের আত্মার মন্দ থেকে এবং আমাদের খারাপ আমল থেকে আল্লাহর আশ্রয় চাই।",
+          "ur": "اور ہم اپنے نفس کے شر اور اپنے برے اعمال سے اللہ کی پناہ مانگتے ہیں۔",
+          "fr": "Et nous cherchons refuge auprès d'Allah contre la méchanceté de nos âmes et les mauvais penchants de nos actions.",
+          "zh": "我们求真主庇佑，免遭自身之恶和恶行的伤害。",
+          "tr": "Nefislerimizin şerlerinden ve amellerimizin kötülüklerinden Allah'a sığınırız."
+        },
+        "ayah": null,
+        "timestamp": "2026-09-28T18:20:36.374Z"
+      },
+      {
+        "arabic": "يا أيها الذين آمنوا اتقوا الله حق تقاته ولا تموتن إلا وأنتم مسلمون",
+        "translations": {
+          "en": "O you who have believed, fear Allah as He should be feared and do not die except as Muslims [in submission to Him].",
+          "bn": "হে মুমিনগণ! তোমরা আল্লাহকে ভয় কর যেভাবে ভয় করা উচিত, এবং আত্মসমর্পণকারী (মুসলিম) না হয়ে কিছুতেই মৃত্যুবরণ করো না।",
+          "ur": "اے ایمان والو! اللہ سے ڈرو جیسا کہ اس سے ڈرنے کا حق ہے، اور تمہیں موت نہ آئے مگر اس حال میں کہ تم مسلم ہو۔",
+          "fr": "Ô les croyants! Craignez Allah comme Il doit être craint. Et ne mourez qu'en pleine soumission.",
+          "zh": "信道的人们啊！你们当真实地敬畏真主，你们除非顺服，切不可死。",
+          "tr": "Ey iman edenler! Allah'a karşı gelmekten nasıl sakınmak gerekiyorsa öylece sakının ve ancak müslümanlar olarak can verin."
+        },
+        "ayah": {
+          "isAyah": true,
+          "confidence": 99,
+          "surahNumber": 3,
+          "surahNameArabic": "آل عمران",
+          "surahNameEnglish": "Ali 'Imran",
+          "ayahNumber": 102,
+          "reference": "Ali 'Imran 3:102",
+          "arabicUthmani": "يَا أَيُّهَا الَّذِينَ آمَنُوا اتَّقُوا اللَّهَ حَقَّ تُقَاتِهِ وَلَا تَمُوتُنَّ إِلَّا وَأَنتُم مُّسْلِمُونَ",
+          "translations": {
+            "en": "O you who have believed, fear Allah as He should be feared and do not die except as Muslims [in submission to Him].",
+            "bn": "হে মুমিনগণ! তোমরা আল্লাহকে ভয় কর যেভাবে ভয় করা উচিত, এবং আত্মসমর্পণকারী (মুসলিম) না হয়ে কিছুতেই মৃত্যুবরণ করো না।",
+            "ur": "اے ایمان والو! اللہ سے ڈرو جیسا کہ اس سے ڈرنے کا حق ہے، اور تمہیں موت نہ آئے مگر اس حال میں کہ تم مسلم ہو۔",
+            "fr": "Ô les croyants! Craignez Allah comme Il doit être craint. Et ne mourez qu'en pleine soumission.",
+            "zh": "信道的人们啊！你们当真实地敬畏真主，你们除非顺服，切不可死。",
+            "tr": "Ey iman edenler! Allah'a karşı gelmekten nasıl sakınmak gerekiyorsa öylece sakının ve ancak müslümanlar olarak can verin."
+          }
+        },
+        "timestamp": "2026-09-28T18:20:36.378Z"
+      },
+      {
+        "arabic": "فإن مع العسر يسرا",
+        "translations": {
+          "en": "For indeed, with hardship [will be] ease.",
+          "bn": "নিশ্চয় কষ্টের সাথেই স্বস্তি আছে।",
+          "ur": "بے شک مشکل کے ساتھ آسانی ہے۔",
+          "fr": "Après la difficulté vient certes la facilité!",
+          "zh": "与艰难相伴的，确是容易。",
+          "tr": "Şüphesiz güçlükle beraber bir kolaylık vardır."
+        },
+        "ayah": {
+          "isAyah": true,
+          "confidence": 99,
+          "surahNumber": 94,
+          "surahNameArabic": "الشرح",
+          "surahNameEnglish": "Ash-Sharh",
+          "ayahNumber": 5,
+          "reference": "Ash-Sharh 94:5",
+          "arabicUthmani": "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا",
+          "translations": {
+            "en": "For indeed, with hardship [will be] ease.",
+            "bn": "নিশ্চয় কষ্টের সাথেই স্বস্তি আছে।",
+            "ur": "بے شک مشکل کے ساتھ آسانی ہے۔",
+            "fr": "Après la difficulté vient certes la facilité!",
+            "zh": "与艰难相伴的，确是容易。",
+            "tr": "Şüphesiz güçlükle beraber bir kolaylık vardır."
+          }
+        },
+        "timestamp": "2026-09-28T18:20:36.382Z"
+      },
+      {
+        "arabic": "أيها الإخوة الكرام، اتقوا الله تعالى واعلموا أن الحياة الدنيا دار امتحان",
+        "translations": {
+          "en": "Respected brothers, fear Allah the Almighty, and know that this worldly life is a realm of trial.",
+          "bn": "হে সম্মানিত ভাইয়েরা, সর্বশক্তিমান আল্লাহকে ভয় করুন এবং জেনে রাখুন যে এই পার্থিব জীবন একটি পরীক্ষার স্থান।",
+          "ur": "معزز بھائیو! اللہ تعالیٰ کا تقویٰ اختیار کرو اور جان لو کہ یہ دنیا امتحان کا گھر ہے۔",
+          "fr": "Chers frères, craignez Allah le Très-Haut et sachez que la vie d'ici-bas est une épreuve.",
+          "zh": "尊贵的兄弟们，应当敬畏至尊的真主，并当知道今世是考验的场所。",
+          "tr": "Ey aziz kardeşler! Yüce Allah'tan sakının ve bilin ki bu dünya hayatı bir imtihan yurdudur."
+        },
+        "ayah": null,
+        "timestamp": "2026-09-28T18:20:36.388Z"
+      },
+      {
+        "arabic": "إن الحمد لله نحمده ونستعينه ونستغفره",
+        "translations": {
+          "en": "All praise is due to Allah; we praise Him, seek His help, and ask for His forgiveness.",
+          "bn": "নিশ্চয় সমস্ত প্রশংসা আল্লাহর জন্য, আমরা তাঁরই প্রশংসা করি, তাঁরই কাছে সাহায্য চাই এবং তাঁরই কাছে ক্ষমা প্রার্থনা করি।",
+          "ur": "تمام تعریفیں اللہ کے لیے ہیں، ہم اسی کی تعریف کرتے ہیں، اسی سے مدد مانگتے ہیں اور اسی سے بخشش چاہتے ہیں۔",
+          "fr": "Toutes les louanges sont à Allah, nous Le louons, nous implorons Son secours et nous Lui demandons pardon.",
+          "zh": "一切赞颂，全归真主，我们赞美他，求他相助，求他宽恕。",
+          "tr": "Hamd yalnızca Allah'adır; O'na hamdeder, O'ndan yardım diler ve O'ndan bağışlanma dileriz."
+        },
+        "ayah": null,
+        "timestamp": "2026-09-28T18:20:36.600Z"
+      }
+    ],
+    "detectedAyahs": [
+      {
+        "reference": "Ali 'Imran 3:102",
+        "arabicUthmani": "يَا أَيُّهَا الَّذِينَ آمَنُوا اتَّقُوا اللَّهَ حَقَّ تُقَاتِهِ وَلَا تَمُوتُنَّ إِلَّا وَأَنتُم مُّسْلِمُونَ",
+        "timestamp": "2026-09-28T18:20:36.378Z"
+      },
+      {
+        "reference": "Ash-Sharh 94:5",
+        "arabicUthmani": "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا",
+        "timestamp": "2026-09-28T18:20:36.382Z"
+      }
+    ]
+  },
+  {
+    "id": "test-session-live",
+    "mosqueName": "Test Masjid",
+    "startedAt": "2026-09-28T18:18:08.572Z",
+    "endedAt": "2026-09-28T18:18:08.611Z",
+    "durationSeconds": 0,
+    "totalTranscripts": 3,
+    "totalAyahsDetected": 1,
+    "peakListeners": 1,
+    "transcripts": [
+      {
+        "arabic": "إن الحمد لله نحمده ونستعينه ونستغفره",
+        "translations": {
+          "en": "All praise is due to Allah; we praise Him, seek His help, and ask for His forgiveness.",
+          "bn": "নিশ্চয় সমস্ত প্রশংসা আল্লাহর জন্য, আমরা তাঁরই প্রশংসা করি, তাঁরই কাছে সাহায্য চাই এবং তাঁরই কাছে ক্ষমা প্রার্থনা করি।",
+          "ur": "تمام تعریفیں اللہ کے لیے ہیں، ہم اسی کی تعریف کرتے ہیں، اسی سے مدد مانگتے ہیں اور اسی سے بخشش چاہتے ہیں۔"
+        },
+        "ayah": null,
+        "timestamp": "2026-09-28T18:18:08.597Z"
+      },
+      {
+        "arabic": "فإن مع العسر يسرا",
+        "translations": {
+          "en": "For indeed, with hardship [will be] ease.",
+          "bn": "নিশ্চয় কষ্টের সাথেই স্বস্তি আছে।",
+          "ur": "بے شک مشکل کے ساتھ آسانی ہے۔",
+          "fr": "Après la difficulté vient certes la facilité!",
+          "zh": "与艰难相伴的，确是容易。",
+          "tr": "Şüphesiz güçlükle beraber bir kolaylık vardır."
+        },
+        "ayah": {
+          "isAyah": true,
+          "confidence": 99,
+          "surahNumber": 94,
+          "surahNameArabic": "الشرح",
+          "surahNameEnglish": "Ash-Sharh",
+          "ayahNumber": 5,
+          "reference": "Ash-Sharh 94:5",
+          "arabicUthmani": "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا",
+          "translations": {
+            "en": "For indeed, with hardship [will be] ease.",
+            "bn": "নিশ্চয় কষ্টের সাথেই স্বস্তি আছে।",
+            "ur": "بے شک مشکل کے ساتھ آسانی ہے۔",
+            "fr": "Après la difficulté vient certes la facilité!",
+            "zh": "与艰难相伴的，确是容易。",
+            "tr": "Şüphesiz güçlükle beraber bir kolaylık vardır."
+          }
+        },
+        "timestamp": "2026-09-28T18:18:08.603Z"
+      },
+      {
+        "arabic": "إن الحمد لله نحمده ونستعينه ونستغفره",
+        "translations": {
+          "en": "All praise is due to Allah; we praise Him, seek His help, and ask for His forgiveness.",
+          "bn": "নিশ্চয় সমস্ত প্রশংসা আল্লাহর জন্য, আমরা তাঁরই প্রশংসা করি, তাঁরই কাছে সাহায্য চাই এবং তাঁরই কাছে ক্ষমা প্রার্থনা করি।",
+          "ur": "تمام تعریفیں اللہ کے لیے ہیں، ہم اسی کی تعریف کرتے ہیں، اسی سے مدد مانگتے ہیں اور اسی سے بخشش چاہتے ہیں۔"
+        },
+        "ayah": null,
+        "timestamp": "2026-09-28T18:18:08.610Z"
+      }
+    ],
+    "detectedAyahs": [
+      {
+        "reference": "Ash-Sharh 94:5",
+        "arabicUthmani": "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا",
+        "timestamp": "2026-09-28T18:18:08.603Z"
+      }
+    ]
+  },
+  {
+    "id": "test-session-live",
+    "mosqueName": "Test Masjid",
+    "startedAt": "2026-09-28T15:47:43.772Z",
+    "endedAt": "2026-09-28T15:47:43.805Z",
+    "durationSeconds": 0,
+    "totalTranscripts": 3,
+    "totalAyahsDetected": 1,
+    "peakListeners": 1,
+    "transcripts": [
+      {
+        "arabic": "إن الحمد لله نحمده ونستعينه ونستغفره",
+        "translations": {
+          "en": "All praise is due to Allah; we praise Him, seek His help, and ask for His forgiveness.",
+          "bn": "নিশ্চয় সমস্ত প্রশংসা আল্লাহর জন্য, আমরা তাঁরই প্রশংসা করি, তাঁরই কাছে সাহায্য চাই এবং তাঁরই কাছে ক্ষমা প্রার্থনা করি।",
+          "ur": "تمام تعریفیں اللہ کے لیے ہیں، ہم اسی کی تعریف کرتے ہیں، اسی سے مدد مانگتے ہیں اور اسی سے بخشش چاہتے ہیں۔"
+        },
+        "ayah": null,
+        "timestamp": "2026-09-28T15:47:43.794Z"
+      },
+      {
+        "arabic": "فإن مع العسر يسرا",
+        "translations": {
+          "en": "For indeed, with hardship [will be] ease.",
+          "bn": "নিশ্চয় কষ্টের সাথেই স্বস্তি আছে।",
+          "ur": "بے شک مشکل کے ساتھ آسانی ہے۔",
+          "fr": "Après la difficulté vient certes la facilité!",
+          "zh": "与艰难相伴的，确是容易。",
+          "tr": "Şüphesiz güçlükle beraber bir kolaylık vardır."
+        },
+        "ayah": {
+          "isAyah": true,
+          "confidence": 99,
+          "surahNumber": 94,
+          "surahNameArabic": "الشرح",
+          "surahNameEnglish": "Ash-Sharh",
+          "ayahNumber": 5,
+          "reference": "Ash-Sharh 94:5",
+          "arabicUthmani": "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا",
+          "translations": {
+            "en": "For indeed, with hardship [will be] ease.",
+            "bn": "নিশ্চয় কষ্টের সাথেই স্বস্তি আছে।",
+            "ur": "بے شک مشکل کے ساتھ آسانی ہے۔",
+            "fr": "Après la difficulté vient certes la facilité!",
+            "zh": "与艰难相伴的，确是容易。",
+            "tr": "Şüphesiz güçlükle beraber bir kolaylık vardır."
+          }
+        },
+        "timestamp": "2026-09-28T15:47:43.798Z"
+      },
+      {
+        "arabic": "إن الحمد لله نحمده ونستعينه ونستغفره",
+        "translations": {
+          "en": "All praise is due to Allah; we praise Him, seek His help, and ask for His forgiveness.",
+          "bn": "নিশ্চয় সমস্ত প্রশংসা আল্লাহর জন্য, আমরা তাঁরই প্রশংসা করি, তাঁরই কাছে সাহায্য চাই এবং তাঁরই কাছে ক্ষমা প্রার্থনা করি।",
+          "ur": "تمام تعریفیں اللہ کے لیے ہیں، ہم اسی کی تعریف کرتے ہیں، اسی سے مدد مانگتے ہیں اور اسی سے بخشش چاہتے ہیں۔"
+        },
+        "ayah": null,
+        "timestamp": "2026-09-28T15:47:43.804Z"
+      }
+    ],
+    "detectedAyahs": [
+      {
+        "reference": "Ash-Sharh 94:5",
+        "arabicUthmani": "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا",
+        "timestamp": "2026-09-28T15:47:43.798Z"
+      }
+    ]
+  },
+  {
+    "id": "test-session-live",
+    "mosqueName": "Test Masjid",
+    "startedAt": "2026-09-28T13:30:46.561Z",
+    "endedAt": "2026-09-28T13:30:46.591Z",
+    "durationSeconds": 0,
+    "totalTranscripts": 3,
+    "totalAyahsDetected": 1,
+    "peakListeners": 1,
+    "transcripts": [
+      {
+        "arabic": "إن الحمد لله نحمده ونستعينه ونستغفره",
+        "translations": {
+          "en": "All praise is due to Allah; we praise Him, seek His help, and ask for His forgiveness.",
+          "bn": "নিশ্চয় সমস্ত প্রশংসা আল্লাহর জন্য, আমরা তাঁরই প্রশংসা করি, তাঁরই কাছে সাহায্য চাই এবং তাঁরই কাছে ক্ষমা প্রার্থনা করি।",
+          "ur": "تمام تعریفیں اللہ کے لیے ہیں، ہم اسی کی تعریف کرتے ہیں، اسی سے مدد مانگتے ہیں اور اسی سے بخشش چاہتے ہیں۔"
+        },
+        "ayah": null,
+        "timestamp": "2026-09-28T13:30:46.581Z"
+      },
+      {
+        "arabic": "فإن مع العسر يسرا",
+        "translations": {
+          "en": "For indeed, with hardship [will be] ease.",
+          "bn": "নিশ্চয় কষ্টের সাথেই স্বস্তি আছে।",
+          "ur": "بے شک مشکل کے ساتھ آسانی ہے۔",
+          "fr": "Après la difficulté vient certes la facilité!",
+          "zh": "与艰难相伴的，确是容易。",
+          "tr": "Şüphesiz güçlükle beraber bir kolaylık vardır."
+        },
+        "ayah": {
+          "isAyah": true,
+          "confidence": 99,
+          "surahNumber": 94,
+          "surahNameArabic": "الشرح",
+          "surahNameEnglish": "Ash-Sharh",
+          "ayahNumber": 5,
+          "reference": "Ash-Sharh 94:5",
+          "arabicUthmani": "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا",
+          "translations": {
+            "en": "For indeed, with hardship [will be] ease.",
+            "bn": "নিশ্চয় কষ্টের সাথেই স্বস্তি আছে।",
+            "ur": "بے شک مشکل کے ساتھ آسانی ہے۔",
+            "fr": "Après la difficulté vient certes la facilité!",
+            "zh": "与艰难相伴的，确是容易。",
+            "tr": "Şüphesiz güçlükle beraber bir kolaylık vardır."
+          }
+        },
+        "timestamp": "2026-09-28T13:30:46.585Z"
+      },
+      {
+        "arabic": "إن الحمد لله نحمده ونستعينه ونستغفره",
+        "translations": {
+          "en": "All praise is due to Allah; we praise Him, seek His help, and ask for His forgiveness.",
+          "bn": "নিশ্চয় সমস্ত প্রশংসা আল্লাহর জন্য, আমরা তাঁরই প্রশংসা করি, তাঁরই কাছে সাহায্য চাই এবং তাঁরই কাছে ক্ষমা প্রার্থনা করি।",
+          "ur": "تمام تعریفیں اللہ کے لیے ہیں، ہم اسی کی تعریف کرتے ہیں، اسی سے مدد مانگتے ہیں اور اسی سے بخشش چاہتے ہیں۔"
+        },
+        "ayah": null,
+        "timestamp": "2026-09-28T13:30:46.590Z"
+      }
+    ],
+    "detectedAyahs": [
+      {
+        "reference": "Ash-Sharh 94:5",
+        "arabicUthmani": "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا",
+        "timestamp": "2026-09-28T13:30:46.585Z"
+      }
+    ]
+  },
+  {
+    "id": "test-session-live",
+    "mosqueName": "Test Masjid",
+    "startedAt": "2026-09-28T11:31:45.424Z",
+    "endedAt": "2026-09-28T11:31:45.458Z",
+    "durationSeconds": 0,
+    "totalTranscripts": 3,
+    "totalAyahsDetected": 1,
+    "peakListeners": 1,
+    "transcripts": [
+      {
+        "arabic": "إن الحمد لله نحمده ونستعينه ونستغفره",
+        "translations": {
+          "en": "All praise is due to Allah; we praise Him, seek His help, and ask for His forgiveness.",
+          "bn": "নিশ্চয় সমস্ত প্রশংসা আল্লাহর জন্য, আমরা তাঁরই প্রশংসা করি, তাঁরই কাছে সাহায্য চাই এবং তাঁরই কাছে ক্ষমা প্রার্থনা করি।",
+          "ur": "تمام تعریفیں اللہ کے لیے ہیں، ہم اسی کی تعریف کرتے ہیں، اسی سے مدد مانگتے ہیں اور اسی سے بخشش چاہتے ہیں۔"
+        },
+        "ayah": null,
+        "timestamp": "2026-09-28T11:31:45.447Z"
+      },
+      {
+        "arabic": "فإن مع العسر يسرا",
+        "translations": {
+          "en": "For indeed, with hardship [will be] ease.",
+          "bn": "নিশ্চয় কষ্টের সাথেই স্বস্তি আছে।",
+          "ur": "بے شک مشکل کے ساتھ آسانی ہے۔",
+          "fr": "Après la difficulté vient certes la facilité!",
+          "zh": "与艰难相伴的，确是容易。",
+          "tr": "Şüphesiz güçlükle beraber bir kolaylık vardır."
+        },
+        "ayah": {
+          "isAyah": true,
+          "confidence": 99,
+          "surahNumber": 94,
+          "surahNameArabic": "الشرح",
+          "surahNameEnglish": "Ash-Sharh",
+          "ayahNumber": 5,
+          "reference": "Ash-Sharh 94:5",
+          "arabicUthmani": "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا",
+          "translations": {
+            "en": "For indeed, with hardship [will be] ease.",
+            "bn": "নিশ্চয় কষ্টের সাথেই স্বস্তি আছে।",
+            "ur": "بے شک مشکل کے ساتھ آسانی ہے۔",
+            "fr": "Après la difficulté vient certes la facilité!",
+            "zh": "与艰难相伴的，确是容易。",
+            "tr": "Şüphesiz güçlükle beraber bir kolaylık vardır."
+          }
+        },
+        "timestamp": "2026-09-28T11:31:45.452Z"
+      },
+      {
+        "arabic": "إن الحمد لله نحمده ونستعينه ونستغفره",
+        "translations": {
+          "en": "All praise is due to Allah; we praise Him, seek His help, and ask for His forgiveness.",
+          "bn": "নিশ্চয় সমস্ত প্রশংসা আল্লাহর জন্য, আমরা তাঁরই প্রশংসা করি, তাঁরই কাছে সাহায্য চাই এবং তাঁরই কাছে ক্ষমা প্রার্থনা করি।",
+          "ur": "تمام تعریفیں اللہ کے لیے ہیں، ہم اسی کی تعریف کرتے ہیں، اسی سے مدد مانگتے ہیں اور اسی سے بخشش چاہتے ہیں۔"
+        },
+        "ayah": null,
+        "timestamp": "2026-09-28T11:31:45.458Z"
+      }
+    ],
+    "detectedAyahs": [
+      {
+        "reference": "Ash-Sharh 94:5",
+        "arabicUthmani": "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا",
+        "timestamp": "2026-09-28T11:31:45.452Z"
+      }
+    ]
+  },
+  {
+    "id": "test-session-live",
+    "mosqueName": "Test Masjid",
+    "startedAt": "2026-09-25T18:13:04.876Z",
+    "endedAt": "2026-09-25T18:13:04.907Z",
+    "durationSeconds": 0,
+    "totalTranscripts": 3,
+    "totalAyahsDetected": 1,
+    "peakListeners": 1,
+    "transcripts": [
+      {
+        "arabic": "إن الحمد لله نحمده ونستعينه ونستغفره",
+        "translations": {
+          "en": "All praise is due to Allah; we praise Him, seek His help, and ask for His forgiveness.",
+          "bn": "নিশ্চয় সমস্ত প্রশংসা আল্লাহর জন্য, আমরা তাঁরই প্রশংসা করি, তাঁরই কাছে সাহায্য চাই এবং তাঁরই কাছে ক্ষমা প্রার্থনা করি।",
+          "ur": "تمام تعریفیں اللہ کے لیے ہیں، ہم اسی کی تعریف کرتے ہیں، اسی سے مدد مانگتے ہیں اور اسی سے بخشش چاہتے ہیں۔"
+        },
+        "ayah": null,
+        "timestamp": "2026-09-25T18:13:04.895Z"
+      },
+      {
+        "arabic": "فإن مع العسر يسرا",
+        "translations": {
+          "en": "For indeed, with hardship [will be] ease.",
+          "bn": "নিশ্চয় কষ্টের সাথেই স্বস্তি আছে।",
+          "ur": "بے شک مشکل کے ساتھ آسانی ہے۔",
+          "fr": "Après la difficulté vient certes la facilité!",
+          "zh": "与艰难相伴的，确是容易。",
+          "tr": "Şüphesiz güçlükle beraber bir kolaylık vardır."
+        },
+        "ayah": {
+          "isAyah": true,
+          "confidence": 99,
+          "surahNumber": 94,
+          "surahNameArabic": "الشرح",
+          "surahNameEnglish": "Ash-Sharh",
+          "ayahNumber": 5,
+          "reference": "Ash-Sharh 94:5",
+          "arabicUthmani": "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا",
+          "translations": {
+            "en": "For indeed, with hardship [will be] ease.",
+            "bn": "নিশ্চয় কষ্টের সাথেই স্বস্তি আছে।",
+            "ur": "بے شک مشکل کے ساتھ آسانی ہے۔",
+            "fr": "Après la difficulté vient certes la facilité!",
+            "zh": "与艰难相伴的，确是容易。",
+            "tr": "Şüphesiz güçlükle beraber bir kolaylık vardır."
+          }
+        },
+        "timestamp": "2026-09-25T18:13:04.899Z"
+      },
+      {
+        "arabic": "إن الحمد لله نحمده ونستعينه ونستغفره",
+        "translations": {
+          "en": "All praise is due to Allah; we praise Him, seek His help, and ask for His forgiveness.",
+          "bn": "নিশ্চয় সমস্ত প্রশংসা আল্লাহর জন্য, আমরা তাঁরই প্রশংসা করি, তাঁরই কাছে সাহায্য চাই এবং তাঁরই কাছে ক্ষমা প্রার্থনা করি।",
+          "ur": "تمام تعریفیں اللہ کے لیے ہیں، ہم اسی کی تعریف کرتے ہیں، اسی سے مدد مانگتے ہیں اور اسی سے بخشش چاہتے ہیں۔"
+        },
+        "ayah": null,
+        "timestamp": "2026-09-25T18:13:04.906Z"
+      }
+    ],
+    "detectedAyahs": [
+      {
+        "reference": "Ash-Sharh 94:5",
+        "arabicUthmani": "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا",
+        "timestamp": "2026-09-25T18:13:04.899Z"
+      }
+    ]
+  },
+  {
+    "id": "test-session-live",
+    "mosqueName": "Test Masjid",
+    "startedAt": "2026-09-23T16:16:35.535Z",
+    "endedAt": "2026-09-23T16:16:35.567Z",
+    "durationSeconds": 0,
+    "totalTranscripts": 3,
+    "totalAyahsDetected": 1,
+    "peakListeners": 1,
+    "transcripts": [
+      {
+        "arabic": "إن الحمد لله نحمده ونستعينه ونستغفره",
+        "translations": {
+          "en": "All praise is due to Allah; we praise Him, seek His help, and ask for His forgiveness.",
+          "bn": "নিশ্চয় সমস্ত প্রশংসা আল্লাহর জন্য, আমরা তাঁরই প্রশংসা করি, তাঁরই কাছে সাহায্য চাই এবং তাঁরই কাছে ক্ষমা প্রার্থনা করি।",
+          "ur": "تمام تعریفیں اللہ کے لیے ہیں، ہم اسی کی تعریف کرتے ہیں، اسی سے مدد مانگتے ہیں اور اسی سے بخشش چاہتے ہیں۔"
+        },
+        "ayah": null,
+        "timestamp": "2026-09-23T16:16:35.555Z"
+      },
+      {
+        "arabic": "فإن مع العسر يسرا",
+        "translations": {
+          "en": "For indeed, with hardship [will be] ease.",
+          "bn": "নিশ্চয় কষ্টের সাথেই স্বস্তি আছে।",
+          "ur": "بے شک مشکل کے ساتھ آسانی ہے۔",
+          "fr": "Après la difficulté vient certes la facilité!",
+          "zh": "与艰难相伴的，确是容易。",
+          "tr": "Şüphesiz güçlükle beraber bir kolaylık vardır."
+        },
+        "ayah": {
+          "isAyah": true,
+          "confidence": 99,
+          "surahNumber": 94,
+          "surahNameArabic": "الشرح",
+          "surahNameEnglish": "Ash-Sharh",
+          "ayahNumber": 5,
+          "reference": "Ash-Sharh 94:5",
+          "arabicUthmani": "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا",
+          "translations": {
+            "en": "For indeed, with hardship [will be] ease.",
+            "bn": "নিশ্চয় কষ্টের সাথেই স্বস্তি আছে।",
+            "ur": "بے شک مشکل کے ساتھ آسانی ہے۔",
+            "fr": "Après la difficulté vient certes la facilité!",
+            "zh": "与艰难相伴的，确是容易。",
+            "tr": "Şüphesiz güçlükle beraber bir kolaylık vardır."
+          }
+        },
+        "timestamp": "2026-09-23T16:16:35.559Z"
+      },
+      {
+        "arabic": "إن الحمد لله نحمده ونستعينه ونستغفره",
+        "translations": {
+          "en": "All praise is due to Allah; we praise Him, seek His help, and ask for His forgiveness.",
+          "bn": "নিশ্চয় সমস্ত প্রশংসা আল্লাহর জন্য, আমরা তাঁরই প্রশংসা করি, তাঁরই কাছে সাহায্য চাই এবং তাঁরই কাছে ক্ষমা প্রার্থনা করি।",
+          "ur": "تمام تعریفیں اللہ کے لیے ہیں، ہم اسی کی تعریف کرتے ہیں، اسی سے مدد مانگتے ہیں اور اسی سے بخشش چاہتے ہیں۔"
+        },
+        "ayah": null,
+        "timestamp": "2026-09-23T16:16:35.566Z"
+      }
+    ],
+    "detectedAyahs": [
+      {
+        "reference": "Ash-Sharh 94:5",
+        "arabicUthmani": "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا",
+        "timestamp": "2026-09-23T16:16:35.559Z"
+      }
+    ]
+  },
+  {
+    "id": "test-session-live",
+    "mosqueName": "Test Masjid",
+    "startedAt": "2026-09-23T16:09:15.948Z",
+    "endedAt": "2026-09-23T16:09:15.989Z",
+    "durationSeconds": 0,
+    "totalTranscripts": 3,
+    "totalAyahsDetected": 1,
+    "peakListeners": 1,
+    "transcripts": [
+      {
+        "arabic": "إن الحمد لله نحمده ونستعينه ونستغفره",
+        "translations": {
+          "en": "All praise is due to Allah; we praise Him, seek His help, and ask for His forgiveness.",
+          "bn": "নিশ্চয় সমস্ত প্রশংসা আল্লাহর জন্য, আমরা তাঁরই প্রশংসা করি, তাঁরই কাছে সাহায্য চাই এবং তাঁরই কাছে ক্ষমা প্রার্থনা করি।",
+          "ur": "تمام تعریفیں اللہ کے لیے ہیں، ہم اسی کی تعریف کرتے ہیں، اسی سے مدد مانگتے ہیں اور اسی سے بخشش چاہتے ہیں۔"
+        },
+        "ayah": null,
+        "timestamp": "2026-09-23T16:09:15.976Z"
+      },
+      {
+        "arabic": "فإن مع العسر يسرا",
+        "translations": {
+          "en": "For indeed, with hardship [will be] ease.",
+          "bn": "নিশ্চয় কষ্টের সাথেই স্বস্তি আছে।",
+          "ur": "بے شک مشکل کے ساتھ آسانی ہے۔",
+          "fr": "Après la difficulté vient certes la facilité!",
+          "zh": "与艰难相伴的，确是容易。",
+          "tr": "Şüphesiz güçlükle beraber bir kolaylık vardır."
+        },
+        "ayah": {
+          "isAyah": true,
+          "confidence": 99,
+          "surahNumber": 94,
+          "surahNameArabic": "الشرح",
+          "surahNameEnglish": "Ash-Sharh",
+          "ayahNumber": 5,
+          "reference": "Ash-Sharh 94:5",
+          "arabicUthmani": "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا",
+          "translations": {
+            "en": "For indeed, with hardship [will be] ease.",
+            "bn": "নিশ্চয় কষ্টের সাথেই স্বস্তি আছে।",
+            "ur": "بے شک مشکل کے ساتھ آسانی ہے۔",
+            "fr": "Après la difficulté vient certes la facilité!",
+            "zh": "与艰难相伴的，确是容易。",
+            "tr": "Şüphesiz güçlükle beraber bir kolaylık vardır."
+          }
+        },
+        "timestamp": "2026-09-23T16:09:15.981Z"
+      },
+      {
+        "arabic": "إن الحمد لله نحمده ونستعينه ونستغفره",
+        "translations": {
+          "en": "All praise is due to Allah; we praise Him, seek His help, and ask for His forgiveness.",
+          "bn": "নিশ্চয় সমস্ত প্রশংসা আল্লাহর জন্য, আমরা তাঁরই প্রশংসা করি, তাঁরই কাছে সাহায্য চাই এবং তাঁরই কাছে ক্ষমা প্রার্থনা করি।",
+          "ur": "تمام تعریفیں اللہ کے لیے ہیں، ہم اسی کی تعریف کرتے ہیں، اسی سے مدد مانگتے ہیں اور اسی سے بخشش چاہتے ہیں۔"
+        },
+        "ayah": null,
+        "timestamp": "2026-09-23T16:09:15.988Z"
+      }
+    ],
+    "detectedAyahs": [
+      {
+        "reference": "Ash-Sharh 94:5",
+        "arabicUthmani": "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا",
+        "timestamp": "2026-09-23T16:09:15.981Z"
+      }
+    ]
+  },
+  {
+    "id": "test-session-live",
+    "mosqueName": "Test Masjid",
+    "startedAt": "2026-09-23T14:33:07.935Z",
+    "endedAt": "2026-09-23T14:33:07.966Z",
+    "durationSeconds": 0,
+    "totalTranscripts": 3,
+    "totalAyahsDetected": 1,
+    "peakListeners": 1,
+    "transcripts": [
+      {
+        "arabic": "إن الحمد لله نحمده ونستعينه ونستغفره",
+        "translations": {
+          "en": "All praise is due to Allah; we praise Him, seek His help, and ask for His forgiveness.",
+          "bn": "নিশ্চয় সমস্ত প্রশংসা আল্লাহর জন্য, আমরা তাঁরই প্রশংসা করি, তাঁরই কাছে সাহায্য চাই এবং তাঁরই কাছে ক্ষমা প্রার্থনা করি।",
+          "ur": "تمام تعریفیں اللہ کے لیے ہیں، ہم اسی کی تعریف کرتے ہیں، اسی سے مدد مانگتے ہیں اور اسی سے بخشش چاہتے ہیں۔"
+        },
+        "ayah": null,
+        "timestamp": "2026-09-23T14:33:07.953Z"
+      },
+      {
+        "arabic": "فإن مع العسر يسرا",
+        "translations": {
+          "en": "For indeed, with hardship [will be] ease.",
+          "bn": "নিশ্চয় কষ্টের সাথেই স্বস্তি আছে।",
+          "ur": "بے شک مشکل کے ساتھ آسانی ہے۔",
+          "fr": "Après la difficulté vient certes la facilité!",
+          "zh": "与艰难相伴的，确是容易。",
+          "tr": "Şüphesiz güçlükle beraber bir kolaylık vardır."
+        },
+        "ayah": {
+          "isAyah": true,
+          "confidence": 99,
+          "surahNumber": 94,
+          "surahNameArabic": "الشرح",
+          "surahNameEnglish": "Ash-Sharh",
+          "ayahNumber": 5,
+          "reference": "Ash-Sharh 94:5",
+          "arabicUthmani": "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا",
+          "translations": {
+            "en": "For indeed, with hardship [will be] ease.",
+            "bn": "নিশ্চয় কষ্টের সাথেই স্বস্তি আছে।",
+            "ur": "بے شک مشکل کے ساتھ آسانی ہے۔",
+            "fr": "Après la difficulté vient certes la facilité!",
+            "zh": "与艰难相伴的，确是容易。",
+            "tr": "Şüphesiz güçlükle beraber bir kolaylık vardır."
+          }
+        },
+        "timestamp": "2026-09-23T14:33:07.958Z"
+      },
+      {
+        "arabic": "إن الحمد لله نحمده ونستعينه ونستغفره",
+        "translations": {
+          "en": "All praise is due to Allah; we praise Him, seek His help, and ask for His forgiveness.",
+          "bn": "নিশ্চয় সমস্ত প্রশংসা আল্লাহর জন্য, আমরা তাঁরই প্রশংসা করি, তাঁরই কাছে সাহায্য চাই এবং তাঁরই কাছে ক্ষমা প্রার্থনা করি।",
+          "ur": "تمام تعریفیں اللہ کے لیے ہیں، ہم اسی کی تعریف کرتے ہیں، اسی سے مدد مانگتے ہیں اور اسی سے بخشش چاہتے ہیں۔"
+        },
+        "ayah": null,
+        "timestamp": "2026-09-23T14:33:07.965Z"
+      }
+    ],
+    "detectedAyahs": [
+      {
+        "reference": "Ash-Sharh 94:5",
+        "arabicUthmani": "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا",
+        "timestamp": "2026-09-23T14:33:07.958Z"
+      }
+    ]
+  },
+  {
+    "id": "test-session-live",
+    "mosqueName": "Test Masjid",
+    "startedAt": "2026-09-23T14:06:53.703Z",
+    "endedAt": "2026-09-23T14:06:53.732Z",
+    "durationSeconds": 0,
+    "totalTranscripts": 3,
+    "totalAyahsDetected": 1,
+    "peakListeners": 1,
+    "transcripts": [
+      {
+        "arabic": "إن الحمد لله نحمده ونستعينه ونستغفره",
+        "translations": {
+          "en": "All praise is due to Allah; we praise Him, seek His help, and ask for His forgiveness.",
+          "bn": "নিশ্চয় সমস্ত প্রশংসা আল্লাহর জন্য, আমরা তাঁরই প্রশংসা করি, তাঁরই কাছে সাহায্য চাই এবং তাঁরই কাছে ক্ষমা প্রার্থনা করি।",
+          "ur": "تمام تعریفیں اللہ کے لیے ہیں، ہم اسی کی تعریف کرتے ہیں، اسی سے مدد مانگتے ہیں اور اسی سے بخشش چاہتے ہیں۔"
+        },
+        "ayah": null,
+        "timestamp": "2026-09-23T14:06:53.723Z"
+      },
+      {
+        "arabic": "فإن مع العسر يسرا",
+        "translations": {
+          "en": "For indeed, with hardship [will be] ease.",
+          "bn": "নিশ্চয় কষ্টের সাথেই স্বস্তি আছে।",
+          "ur": "بے شک مشکل کے ساتھ آسانی ہے۔",
+          "fr": "Après la difficulté vient certes la facilité!",
+          "zh": "与艰难相伴的，确是容易。",
+          "tr": "Şüphesiz güçlükle beraber bir kolaylık vardır."
+        },
+        "ayah": {
+          "isAyah": true,
+          "confidence": 99,
+          "surahNumber": 94,
+          "surahNameArabic": "الشرح",
+          "surahNameEnglish": "Ash-Sharh",
+          "ayahNumber": 5,
+          "reference": "Ash-Sharh 94:5",
+          "arabicUthmani": "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا",
+          "translations": {
+            "en": "For indeed, with hardship [will be] ease.",
+            "bn": "নিশ্চয় কষ্টের সাথেই স্বস্তি আছে।",
+            "ur": "بے شک مشکل کے ساتھ آسانی ہے۔",
+            "fr": "Après la difficulté vient certes la facilité!",
+            "zh": "与艰难相伴的，确是容易。",
+            "tr": "Şüphesiz güçlükle beraber bir kolaylık vardır."
+          }
+        },
+        "timestamp": "2026-09-23T14:06:53.727Z"
+      },
+      {
+        "arabic": "إن الحمد لله نحمده ونستعينه ونستغفره",
+        "translations": {
+          "en": "All praise is due to Allah; we praise Him, seek His help, and ask for His forgiveness.",
+          "bn": "নিশ্চয় সমস্ত প্রশংসা আল্লাহর জন্য, আমরা তাঁরই প্রশংসা করি, তাঁরই কাছে সাহায্য চাই এবং তাঁরই কাছে ক্ষমা প্রার্থনা করি।",
+          "ur": "تمام تعریفیں اللہ کے لیے ہیں، ہم اسی کی تعریف کرتے ہیں، اسی سے مدد مانگتے ہیں اور اسی سے بخشش چاہتے ہیں۔"
+        },
+        "ayah": null,
+        "timestamp": "2026-09-23T14:06:53.732Z"
+      }
+    ],
+    "detectedAyahs": [
+      {
+        "reference": "Ash-Sharh 94:5",
+        "arabicUthmani": "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا",
+        "timestamp": "2026-09-23T14:06:53.727Z"
+      }
+    ]
+  },
+  {
+    "id": "test-session-live",
+    "mosqueName": "Test Masjid",
+    "startedAt": "2026-09-23T13:13:29.781Z",
+    "endedAt": "2026-09-23T13:13:29.812Z",
+    "durationSeconds": 0,
+    "totalTranscripts": 3,
+    "totalAyahsDetected": 1,
+    "peakListeners": 1,
+    "transcripts": [
+      {
+        "arabic": "إن الحمد لله نحمده ونستعينه ونستغفره",
+        "translations": {
+          "en": "All praise is due to Allah; we praise Him, seek His help, and ask for His forgiveness.",
+          "bn": "নিশ্চয় সমস্ত প্রশংসা আল্লাহর জন্য, আমরা তাঁরই প্রশংসা করি, তাঁরই কাছে সাহায্য চাই এবং তাঁরই কাছে ক্ষমা প্রার্থনা করি।",
+          "ur": "تمام تعریفیں اللہ کے لیے ہیں، ہم اسی کی تعریف کرتے ہیں، اسی سے مدد مانگتے ہیں اور اسی سے بخشش چاہتے ہیں۔"
+        },
+        "ayah": null,
+        "timestamp": "2026-09-23T13:13:29.800Z"
+      },
+      {
+        "arabic": "فإن مع العسر يسرا",
+        "translations": {
+          "en": "For indeed, with hardship [will be] ease.",
+          "bn": "নিশ্চয় কষ্টের সাথেই স্বস্তি আছে।",
+          "ur": "بے شک مشکل کے ساتھ آسانی ہے۔",
+          "fr": "Après la difficulté vient certes la facilité!",
+          "zh": "与艰难相伴的，确是容易。",
+          "tr": "Şüphesiz güçlükle beraber bir kolaylık vardır."
+        },
+        "ayah": {
+          "isAyah": true,
+          "confidence": 99,
+          "surahNumber": 94,
+          "surahNameArabic": "الشرح",
+          "surahNameEnglish": "Ash-Sharh",
+          "ayahNumber": 5,
+          "reference": "Ash-Sharh 94:5",
+          "arabicUthmani": "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا",
+          "translations": {
+            "en": "For indeed, with hardship [will be] ease.",
+            "bn": "নিশ্চয় কষ্টের সাথেই স্বস্তি আছে।",
+            "ur": "بے شک مشکل کے ساتھ آسانی ہے۔",
+            "fr": "Après la difficulté vient certes la facilité!",
+            "zh": "与艰难相伴的，确是容易。",
+            "tr": "Şüphesiz güçlükle beraber bir kolaylık vardır."
+          }
+        },
+        "timestamp": "2026-09-23T13:13:29.804Z"
+      },
+      {
+        "arabic": "إن الحمد لله نحمده ونستعينه ونستغفره",
+        "translations": {
+          "en": "All praise is due to Allah; we praise Him, seek His help, and ask for His forgiveness.",
+          "bn": "নিশ্চয় সমস্ত প্রশংসা আল্লাহর জন্য, আমরা তাঁরই প্রশংসা করি, তাঁরই কাছে সাহায্য চাই এবং তাঁরই কাছে ক্ষমা প্রার্থনা করি।",
+          "ur": "تمام تعریفیں اللہ کے لیے ہیں، ہم اسی کی تعریف کرتے ہیں، اسی سے مدد مانگتے ہیں اور اسی سے بخشش چاہتے ہیں۔"
+        },
+        "ayah": null,
+        "timestamp": "2026-09-23T13:13:29.812Z"
+      }
+    ],
+    "detectedAyahs": [
+      {
+        "reference": "Ash-Sharh 94:5",
+        "arabicUthmani": "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا",
+        "timestamp": "2026-09-23T13:13:29.804Z"
+      }
+    ]
+  },
+  {
+    "id": "test-session-live",
+    "mosqueName": "Test Masjid",
+    "startedAt": "2026-09-23T11:46:11.705Z",
+    "endedAt": "2026-09-23T11:46:11.734Z",
+    "durationSeconds": 0,
+    "totalTranscripts": 3,
+    "totalAyahsDetected": 1,
+    "peakListeners": 1,
+    "transcripts": [
+      {
+        "arabic": "إن الحمد لله نحمده ونستعينه ونستغفره",
+        "translations": {
+          "en": "All praise is due to Allah; we praise Him, seek His help, and ask for His forgiveness.",
+          "bn": "নিশ্চয় সমস্ত প্রশংসা আল্লাহর জন্য, আমরা তাঁরই প্রশংসা করি, তাঁরই কাছে সাহায্য চাই এবং তাঁরই কাছে ক্ষমা প্রার্থনা করি।",
+          "ur": "تمام تعریفیں اللہ کے لیے ہیں، ہم اسی کی تعریف کرتے ہیں، اسی سے مدد مانگتے ہیں اور اسی سے بخشش چاہتے ہیں۔"
+        },
+        "ayah": null,
+        "timestamp": "2026-09-23T11:46:11.722Z"
+      },
+      {
+        "arabic": "فإن مع العسر يسرا",
+        "translations": {
+          "en": "For indeed, with hardship [will be] ease.",
+          "bn": "নিশ্চয় কষ্টের সাথেই স্বস্তি আছে।",
+          "ur": "بے شک مشکل کے ساتھ آسانی ہے۔",
+          "fr": "Après la difficulté vient certes la facilité!",
+          "zh": "与艰难相伴的，确是容易。",
+          "tr": "Şüphesiz güçlükle beraber bir kolaylık vardır."
+        },
+        "ayah": {
+          "isAyah": true,
+          "confidence": 99,
+          "surahNumber": 94,
+          "surahNameArabic": "الشرح",
+          "surahNameEnglish": "Ash-Sharh",
+          "ayahNumber": 5,
+          "reference": "Ash-Sharh 94:5",
+          "arabicUthmani": "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا",
+          "translations": {
+            "en": "For indeed, with hardship [will be] ease.",
+            "bn": "নিশ্চয় কষ্টের সাথেই স্বস্তি আছে।",
+            "ur": "بے شک مشکل کے ساتھ آسانی ہے۔",
+            "fr": "Après la difficulté vient certes la facilité!",
+            "zh": "与艰难相伴的，确是容易。",
+            "tr": "Şüphesiz güçlükle beraber bir kolaylık vardır."
+          }
+        },
+        "timestamp": "2026-09-23T11:46:11.726Z"
+      },
+      {
+        "arabic": "إن الحمد لله نحمده ونستعينه ونستغفره",
+        "translations": {
+          "en": "All praise is due to Allah; we praise Him, seek His help, and ask for His forgiveness.",
+          "bn": "নিশ্চয় সমস্ত প্রশংসা আল্লাহর জন্য, আমরা তাঁরই প্রশংসা করি, তাঁরই কাছে সাহায্য চাই এবং তাঁরই কাছে ক্ষমা প্রার্থনা করি।",
+          "ur": "تمام تعریفیں اللہ کے لیے ہیں، ہم اسی کی تعریف کرتے ہیں، اسی سے مدد مانگتے ہیں اور اسی سے بخشش چاہتے ہیں۔"
+        },
+        "ayah": null,
+        "timestamp": "2026-09-23T11:46:11.733Z"
+      }
+    ],
+    "detectedAyahs": [
+      {
+        "reference": "Ash-Sharh 94:5",
+        "arabicUthmani": "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا",
+        "timestamp": "2026-09-23T11:46:11.726Z"
+      }
+    ]
+  }
+]

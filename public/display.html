@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Live TV Display — MosqAI</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="tv-body">
+  <!-- Minimal TV Header -->
+  <header class="tv-header">
+    <div style="display: flex; align-items: center; gap: 1rem;">
+      <span style="font-size: 2rem;">🕌</span>
+      <div>
+        <h1 style="font-size: 1.5rem; font-weight: 700; letter-spacing: -0.01em;" id="tv-mosque-name">Masjid Al-Noor</h1>
+        <p style="font-size: 0.95rem; color: #94a3b8;">Live Khutbah Translation Display</p>
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 1.25rem;">
+      <div class="badge badge-live" id="tv-status-badge">
+        <span class="pulse-dot"></span> <span id="tv-status-text">LIVE</span>
+      </div>
+      <button id="btn-fullscreen" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.4rem 0.8rem;">
+        ⛶ Fullscreen
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Subtitle & Ayah Stage -->
+  <main class="tv-content" id="tv-stage">
+    
+    <!-- Default Waiting State -->
+    <div id="tv-waiting" style="text-align: center; max-width: 800px; margin: 0 auto;">
+      <div style="font-size: 3.5rem; margin-bottom: 0.5rem; opacity: 0.9;">📖</div>
+      <h2 style="font-size: 2.5rem; color: #f8fafc; font-weight: 700; margin-bottom: 0.5rem;">
+        Friday Khutbah Starting Soon
+      </h2>
+      <p style="font-size: 1.25rem; color: #94a3b8; margin-bottom: 1.5rem;">
+        Scan this QR code with your phone camera to hear live translation in your earbuds.
+      </p>
+      
+      <div style="background: white; padding: 1rem; border-radius: 16px; display: inline-block; box-shadow: 0 15px 35px rgba(0,0,0,0.6); margin-bottom: 1rem;">
+        <img id="tv-qr-img" src="" alt="Attendee Mobile QR Code" style="width: 220px; height: 220px; display: block;" />
+      </div>
+
+      <div style="display: flex; justify-content: center; gap: 1rem; color: var(--accent-emerald); font-size: 0.95rem; font-weight: 600;">
+        <span>✓ Zero Sign-up</span>
+        <span>•</span>
+        <span>✓ Free Earbud Audio</span>
+        <span>•</span>
+        <span>✓ 6+ Languages</span>
+      </div>
+    </div>
+
+    <!-- Active Sermon Speech Subtitle Block (Hidden when idle) -->
+    <div id="tv-speech-box" style="display: none; width: 100%;">
+      <div class="tv-arabic" id="tv-arabic-text">...</div>
+      <div class="tv-translated" id="tv-translated-text">...</div>
+    </div>
+
+    <!-- Active Quran Ayah Showcase Card (Hidden unless Quran detected) -->
+    <div id="tv-ayah-card" class="tv-ayah-box" style="display: none;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; border-bottom: 1px solid rgba(217, 119, 6, 0.4); padding-bottom: 0.75rem;">
+        <span style="background: var(--accent-gold); color: #000; font-weight: 700; padding: 0.35rem 0.9rem; border-radius: 6px; font-size: 1.1rem;">
+          📖 Holy Quran Recitation
+        </span>
+        <span id="tv-ayah-ref" style="font-size: 1.3rem; font-weight: 700; color: #fde047;">
+          Surah Ash-Sharh (94:5)
+        </span>
+      </div>
+      <div class="tv-ayah-arabic" id="tv-ayah-arabic">فَإِنَّ مَعَ الْعُسْرِ يُسْرًا</div>
+      <div class="tv-ayah-translation" id="tv-ayah-trans">"Indeed, with hardship will be ease."</div>
+    </div>
+
+  </main>
+
+  <!-- TV Footer Ticker -->
+  <footer style="padding: 1rem 3rem; background: #0b1120; border-top: 1px solid #1e293b; display: flex; justify-content: space-between; align-items: center; font-size: 1.1rem; color: #94a3b8;">
+    <div>
+      Scan QR code on your phone to choose your preferred language and listen via earbuds.
+    </div>
+    <div id="tv-clock" style="font-family: monospace; font-weight: 600; color: #ffffff;">
+      --:--
+    </div>
+  </footer>
+
+  <script src="display.js"></script>
+</body>
+</html>

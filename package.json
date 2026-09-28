@@ -1,0 +1,31 @@
+{
+  "name": "mosq-live-khutbah-translation",
+  "version": "1.0.0",
+  "description": "Live Khutbah Real-Time Translation, Quran Detection, TV Display, and Earbud Audio Streaming",
+  "main": "server/index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node server/index.js",
+    "test:e2e": "node test/autonomous_e2e_test.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "qrcode": "^1.5.3",
+    "ws": "^8.17.0"
+  },
+  "keywords": [
+    "khutbah",
+    "translation",
+    "tarjam",
+    "gladia",
+    "cartesia",
+    "groq",
+    "quran-detection",
+    "realtime-tts"
+  ],
+  "author": "MosqAI",
+  "license": "MIT"
+}
