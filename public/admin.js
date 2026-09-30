@@ -301,33 +301,50 @@ function updateTimerDisplay() {
   liveTimer.textContent = `${hrs}:${mins}:${secs}`;
 }
 
-// Button Listeners
+// Button Listeners — optimistic UI update (no waiting for WebSocket echo)
 btnStart.addEventListener('click', async () => {
-  await fetch(`/api/session/${currentSessionId}/start`, { method: 'POST' });
+  // Update UI immediately
+  setSessionActive(new Date().toISOString());
+  try {
+    await fetch(`/api/session/${currentSessionId}/start`, { method: 'POST' });
+  } catch (e) { console.warn('Start API error:', e.message); }
 });
 
 btnPause.addEventListener('click', async () => {
-  await fetch(`/api/session/${currentSessionId}/pause`, { method: 'POST' });
+  setSessionPaused();
+  try {
+    await fetch(`/api/session/${currentSessionId}/pause`, { method: 'POST' });
+  } catch (e) { console.warn('Pause API error:', e.message); }
 });
 
 btnEnd.addEventListener('click', async () => {
   if (confirm('Are you sure you want to end and archive this Khutbah session?')) {
-    await fetch(`/api/session/${currentSessionId}/end`, { method: 'POST' });
+    setSessionEnded();
+    try {
+      await fetch(`/api/session/${currentSessionId}/end`, { method: 'POST' });
+    } catch (e) { console.warn('End API error:', e.message); }
   }
 });
 
 btnSimulate.addEventListener('click', async () => {
   if (!isSimulating) {
-    await fetch(`/api/session/${currentSessionId}/simulate/start`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ intervalMs: 3800 })
-    });
+    // Start session + simulate
+    if (sessionStatus !== 'active') setSessionActive(new Date().toISOString());
+    try {
+      await fetch(`/api/session/${currentSessionId}/start`, { method: 'POST' });
+      await fetch(`/api/session/${currentSessionId}/simulate/start`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ intervalMs: 3800 })
+      });
+    } catch (e) { console.warn('Simulate start error:', e.message); }
     isSimulating = true;
     btnSimulate.textContent = '⏹ Stop Simulation';
     btnSimulate.className = 'btn btn-danger';
   } else {
-    await fetch(`/api/session/${currentSessionId}/simulate/stop`, { method: 'POST' });
+    try {
+      await fetch(`/api/session/${currentSessionId}/simulate/stop`, { method: 'POST' });
+    } catch (e) {}
     isSimulating = false;
     btnSimulate.textContent = '⚡ Simulate Live Khutbah Demo';
     btnSimulate.className = 'btn btn-accent';
@@ -349,77 +366,88 @@ manualInput.addEventListener('keydown', (e) => {
   if (e.key === 'Enter') btnInject.click();
 });
 
-// Live Microphone streaming & Deepgram Audio Pipeline
-let mediaRecorder = null;
+// Live Microphone — Web Speech API (Arabic ar-SA)
+// Sends TEXT to server via HTTP (works on all platforms including Railway/Vercel)
+let speechRecognition = null;
+let micActive = false;
 
 btnToggleMic.addEventListener('click', async () => {
-  if (!mediaStream) {
+  if (!micActive) {
     try {
+      // Request mic permission + audio level visualizer
       mediaStream = await navigator.mediaDevices.getUserMedia({ audio: true });
       audioContext = new (window.AudioContext || window.webkitAudioContext)();
       const source = audioContext.createMediaStreamSource(mediaStream);
       analyser = audioContext.createAnalyser();
       analyser.fftSize = 256;
       source.connect(analyser);
-
-      btnToggleMic.textContent = '🛑 Stop Live Mic';
-      btnToggleMic.className = 'btn btn-danger';
-
       const dataArray = new Uint8Array(analyser.frequencyBinCount);
       micInterval = setInterval(() => {
         analyser.getByteFrequencyData(dataArray);
-        const sum = dataArray.reduce((acc, v) => acc + v, 0);
-        const avg = sum / dataArray.length;
-        micLevelBar.style.width = `${Math.min(avg * 2, 100)}%`;
+        const avg = dataArray.reduce((a, v) => a + v, 0) / dataArray.length;
+        micLevelBar.style.width = `${Math.min(avg * 2.5, 100)}%`;
       }, 100);
 
-      // Stream live audio chunks to Deepgram STT
-      try {
-        const mimeType = MediaRecorder.isTypeSupported('audio/webm;codecs=opus')
-          ? 'audio/webm;codecs=opus'
-          : 'audio/webm';
-        mediaRecorder = new MediaRecorder(mediaStream, { mimeType });
-        mediaRecorder.ondataavailable = async (e) => {
-          if (e.data && e.data.size > 0 && ws && ws.readyState === WebSocket.OPEN) {
-            const buffer = await e.data.arrayBuffer();
-            ws.send(buffer);
-          }
-        };
-        mediaRecorder.start(250); // 250ms chunks for low-latency live STT
-      } catch (recErr) {
-        console.warn('MediaRecorder not available, relying on speech recognition:', recErr.message);
+      // Auto-start the session if not already started
+      if (sessionStatus !== 'active') {
+        setSessionActive(new Date().toISOString());
+        fetch(`/api/session/${currentSessionId}/start`, { method: 'POST' }).catch(() => {});
       }
 
-      // Web Speech API fallback for local live speech recognition
-      if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
-        const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
-        const recognition = new SpeechRec();
-        recognition.continuous = true;
-        recognition.interimResults = false;
-        recognition.lang = 'ar-SA';
-
-        recognition.onresult = (evt) => {
-          const transcript = evt.results[evt.results.length - 1][0].transcript;
-          if (ws && ws.readyState === WebSocket.OPEN) {
-            ws.send(JSON.stringify({
-              type: 'DIRECT_SPEECH',
-              text: transcript
-            }));
-          }
-        };
-
-        recognition.start();
+      // Web Speech API — sends Arabic text to server
+      if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
+        alert('Web Speech API not supported. Please use Google Chrome for live Arabic recognition.');
+        return;
       }
+
+      const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
+      speechRecognition = new SpeechRec();
+      speechRecognition.continuous = true;
+      speechRecognition.interimResults = false;
+      speechRecognition.lang = 'ar-SA';
+      speechRecognition.maxAlternatives = 1;
+
+      speechRecognition.onresult = async (evt) => {
+        const transcript = evt.results[evt.results.length - 1][0].transcript.trim();
+        if (!transcript) return;
+        console.log('[Mic] Arabic recognized:', transcript);
+        // Send via HTTP POST — works on any platform
+        try {
+          await fetch(`/api/session/${currentSessionId}/inject-text`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ text: transcript })
+          });
+        } catch (err) {
+          console.warn('[Mic] Send error:', err.message);
+        }
+      };
+
+      speechRecognition.onerror = (evt) => {
+        if (evt.error === 'no-speech') return;
+        console.warn('[Speech] Error:', evt.error);
+      };
+
+      speechRecognition.onend = () => {
+        // Auto-restart so it stays continuous
+        if (micActive) {
+          try { speechRecognition.start(); } catch (e) {}
+        }
+      };
+
+      speechRecognition.start();
+      micActive = true;
+      btnToggleMic.textContent = '🛑 Stop Live Mic';
+      btnToggleMic.className = 'btn btn-danger';
+
     } catch (err) {
       alert('Could not access microphone: ' + err.message);
     }
   } else {
-    if (mediaRecorder && mediaRecorder.state !== 'inactive') {
-      mediaRecorder.stop();
-      mediaRecorder = null;
-    }
-    mediaStream.getTracks().forEach(t => t.stop());
-    mediaStream = null;
+    // Stop
+    micActive = false;
+    if (speechRecognition) { try { speechRecognition.stop(); } catch (e) {} speechRecognition = null; }
+    if (mediaStream) { mediaStream.getTracks().forEach(t => t.stop()); mediaStream = null; }
     clearInterval(micInterval);
     micLevelBar.style.width = '0%';
     btnToggleMic.textContent = '🎤 Enable Live Mic';

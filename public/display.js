@@ -1,120 +1,139 @@
-// MosqAI - Live TV / Projector Display Script
-let ws = null;
+// MosqAI - Live TV Split-Screen Display Script
 const urlParams = new URLSearchParams(window.location.search);
 const sessionId = urlParams.get('session') || 'jumuah-live';
+let ws = null;
+let lastDisplayTimestamp = null;
 
-const tvMosqueName = document.getElementById('tv-mosque-name');
-const tvWaiting = document.getElementById('tv-waiting');
-const tvSpeechBox = document.getElementById('tv-speech-box');
-const tvArabicText = document.getElementById('tv-arabic-text');
-const tvTranslatedText = document.getElementById('tv-translated-text');
-const tvAyahCard = document.getElementById('tv-ayah-card');
-const tvAyahRef = document.getElementById('tv-ayah-ref');
-const tvAyahArabic = document.getElementById('tv-ayah-arabic');
-const tvAyahTrans = document.getElementById('tv-ayah-trans');
-const tvClock = document.getElementById('tv-clock');
-const btnFullscreen = document.getElementById('btn-fullscreen');
+const mosqueNameEl = document.getElementById('mosque-name');
+const liveBadge = document.getElementById('live-badge');
+const liveText = document.getElementById('live-text');
+const clockEl = document.getElementById('clock');
+const waitingEl = document.getElementById('waiting');
+const splitScreen = document.getElementById('split-screen');
+const arabicTextEl = document.getElementById('arabic-text');
+const translatedTextEl = document.getElementById('translated-text');
+const langIndicatorEl = document.getElementById('lang-indicator');
+const ayahBanner = document.getElementById('ayah-banner');
+const ayahRefEl = document.getElementById('ayah-reference');
+const ayahArabicEl = document.getElementById('ayah-arabic');
+const ayahTransEl = document.getElementById('ayah-translation');
+const qrImg = document.getElementById('qr-img');
+const waitingQrImg = document.getElementById('waiting-qr-img');
+const joinUrlText = document.getElementById('join-url-text');
 
-function updateClock() {
-  const now = new Date();
-  tvClock.textContent = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+// Clock
+setInterval(() => {
+  clockEl.textContent = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+}, 1000);
+clockEl.textContent = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+
+function setLive(isLive, label) {
+  if (isLive) {
+    liveBadge.className = 'live-badge';
+    liveText.textContent = label || 'LIVE';
+  } else {
+    liveBadge.className = 'live-badge idle';
+    liveText.textContent = label || 'WAITING';
+  }
 }
-setInterval(updateClock, 1000);
-updateClock();
+
+function showSplitScreen() {
+  waitingEl.style.display = 'none';
+  splitScreen.classList.add('visible');
+}
+
+function showWaiting() {
+  waitingEl.style.display = 'flex';
+  splitScreen.classList.remove('visible');
+}
+
+function renderSubtitle({ arabic, translated, ayah, language }) {
+  showSplitScreen();
+
+  if (ayah) {
+    // Quran ayah — show full-screen overlay
+    arabicTextEl.textContent = '';
+    translatedTextEl.textContent = '';
+    ayahBanner.classList.add('visible');
+
+    const ref = ayah.reference || `${ayah.surahNameEnglish || 'Quran'} (${ayah.surahNumber || ''}:${ayah.ayahNumber || ''})`;
+    ayahRefEl.textContent = ref;
+    ayahArabicEl.textContent = ayah.arabicUthmani || arabic || '';
+    const trans = (ayah.translations && (ayah.translations.en || Object.values(ayah.translations)[0])) || ayah.translation || translated || '';
+    ayahTransEl.textContent = `"${trans}"`;
+    ayahArabicEl.classList.add('fade-in');
+    ayahTransEl.classList.add('fade-in');
+    setTimeout(() => {
+      ayahArabicEl.classList.remove('fade-in');
+      ayahTransEl.classList.remove('fade-in');
+    }, 600);
+  } else {
+    // Standard speech — split screen
+    ayahBanner.classList.remove('visible');
+    arabicTextEl.textContent = arabic || '';
+    translatedTextEl.textContent = translated || '';
+    arabicTextEl.classList.add('fade-in');
+    translatedTextEl.classList.add('fade-in');
+    setTimeout(() => {
+      arabicTextEl.classList.remove('fade-in');
+      translatedTextEl.classList.remove('fade-in');
+    }, 600);
+  }
+}
 
 async function init() {
   try {
     const res = await fetch(`/api/session/${sessionId}`);
     if (res.ok) {
       const data = await res.json();
-      if (data.mosqueName) tvMosqueName.textContent = data.mosqueName;
+      if (data.mosqueName) mosqueNameEl.textContent = data.mosqueName;
       if (data.qrCodeDataUrl) {
-        const tvQrImg = document.getElementById('tv-qr-img');
-        if (tvQrImg) tvQrImg.src = data.qrCodeDataUrl;
+        qrImg.src = data.qrCodeDataUrl;
+        waitingQrImg.src = data.qrCodeDataUrl;
       }
-      if (data.status === 'active') {
-        setTvLiveStatus(true);
-      }
+      if (data.joinUrl) joinUrlText.textContent = data.joinUrl.replace('https://', '');
+      if (data.status === 'active') setLive(true);
     }
-  } catch (err) {
-    console.warn('Could not fetch session metadata:', err);
-  }
+  } catch (e) {}
 
   connectWebSocket();
-  startDisplayFeedSync();
+  startFeedSync();
 }
-
-function setTvLiveStatus(isLive, label = 'LIVE KHUTBAH') {
-  const badge = document.getElementById('tv-status-badge');
-  const text = document.getElementById('tv-status-text');
-  if (!badge || !text) return;
-  if (isLive) {
-    badge.className = 'badge badge-live';
-    text.textContent = label;
-  } else {
-    badge.className = 'badge badge-idle';
-    text.textContent = label;
-  }
-}
-
-let lastDisplayTimestamp = null;
 
 function connectWebSocket() {
   const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
   ws = new WebSocket(`${protocol}//${window.location.host}/ws`);
 
   ws.onopen = () => {
-    ws.send(JSON.stringify({
-      type: 'JOIN_ROOM',
-      sessionId: sessionId,
-      role: 'tv'
-    }));
+    ws.send(JSON.stringify({ type: 'JOIN_ROOM', sessionId, role: 'tv' }));
   };
 
   ws.onmessage = (event) => {
     try {
       const data = JSON.parse(event.data);
-
       if (data.type === 'SESSION_STATUS') {
-        if (data.status === 'active') {
-          setTvLiveStatus(true, 'LIVE KHUTBAH');
-        } else if (data.status === 'paused') {
-          setTvLiveStatus(false, 'PAUSED');
-        } else if (data.status === 'ended') {
-          setTvLiveStatus(false, 'CONCLUDED');
-          tvWaiting.style.display = 'block';
-          tvSpeechBox.style.display = 'none';
-          tvAyahCard.style.display = 'none';
-        }
+        if (data.status === 'active') setLive(true, 'LIVE');
+        else if (data.status === 'paused') setLive(false, 'PAUSED');
+        else if (data.status === 'ended') { setLive(false, 'CONCLUDED'); showWaiting(); }
       }
-
       if (data.type === 'LIVE_SUBTITLE') {
         lastDisplayTimestamp = data.timestamp;
         renderSubtitle(data);
       }
-    } catch (err) {
-      console.warn('Error reading display subtitle:', err);
-    }
+    } catch (e) {}
   };
 
-  ws.onclose = () => {
-    setTimeout(connectWebSocket, 2000);
-  };
+  ws.onclose = () => setTimeout(connectWebSocket, 2000);
 }
 
-// Background sync fallback for multi-device serverless synchronization
-function startDisplayFeedSync() {
+function startFeedSync() {
   setInterval(async () => {
     try {
       const url = `/api/session/${sessionId}/feed${lastDisplayTimestamp ? `?since=${encodeURIComponent(lastDisplayTimestamp)}` : ''}`;
       const res = await fetch(url);
       if (!res.ok) return;
       const data = await res.json();
-
-      if (data.status === 'active') {
-        setTvLiveStatus(true, 'LIVE KHUTBAH');
-      }
-
+      if (data.status === 'active') setLive(true, 'LIVE');
       if (data.transcripts && data.transcripts.length > 0) {
         const latest = data.transcripts[data.transcripts.length - 1];
         if (latest.timestamp !== lastDisplayTimestamp) {
@@ -126,50 +145,21 @@ function startDisplayFeedSync() {
           });
         }
       }
-    } catch (e) {
-      // quiet fallback
-    }
+    } catch (e) {}
   }, 2000);
 }
 
-function renderSubtitle({ arabic, translated, ayah }) {
-  if (tvWaiting) tvWaiting.style.display = 'none';
-
-  if (ayah) {
-    // Show Sacred Ayah Showcase Card
-    tvSpeechBox.style.display = 'none';
-    tvAyahCard.style.display = 'block';
-
-    const refText = ayah.reference || `${ayah.surahNameEnglish || 'Holy Quran'} (${ayah.surahNumber || ''}:${ayah.ayahNumber || ''})`;
-    tvAyahRef.textContent = refText;
-    tvAyahArabic.textContent = ayah.arabicUthmani || ayah.arabic || arabic;
-    const transText = (ayah.translations && (ayah.translations.en || Object.values(ayah.translations)[0])) || ayah.translation || translated || '';
-    tvAyahTrans.textContent = `"${transText}"`;
-  } else {
-    // Show standard large dual-language subtitle
-    tvAyahCard.style.display = 'none';
-    tvSpeechBox.style.display = 'block';
-
-    tvArabicText.textContent = arabic || '';
-    tvTranslatedText.textContent = translated || '';
-  }
-}
-
-// Fullscreen toggle for TV hall display
-btnFullscreen.addEventListener('click', () => {
+function toggleFullscreen() {
+  const btn = document.getElementById('btn-fullscreen');
   if (!document.fullscreenElement) {
-    document.documentElement.requestFullscreen().catch(err => {
-      console.warn(`Fullscreen error: ${err.message}`);
-    });
-    btnFullscreen.textContent = '⛶ Exit Fullscreen';
+    document.documentElement.requestFullscreen().catch(() => {});
+    btn.textContent = '⛶ Exit Fullscreen';
   } else {
     document.exitFullscreen();
-    btnFullscreen.textContent = '⛶ Fullscreen';
+    btn.textContent = '⛶ Fullscreen';
   }
-});
+}
 
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', init);
-} else {
-  init();
-}
+} else { init(); }
